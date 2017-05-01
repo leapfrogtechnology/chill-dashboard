@@ -10,7 +10,7 @@
           <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
               <li>
-                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                <a><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
               </li>
             </ul>
           </div>
@@ -33,9 +33,5 @@
 <style>
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
   }
 </style>
