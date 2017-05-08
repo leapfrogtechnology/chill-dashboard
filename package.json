@@ -5,8 +5,9 @@
   "scripts": {
     "lint": "eslint src test; exit 0",
     "lint:fix": "eslint src test --fix; exit 0",
-    "test": "NODE_ENV=test mocha --recursive --require babel-register test",
-    "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps",
+    "start:dev": "nodemon --watch .env --watch src/server --exec babel-node src/server --source-maps",
+    "test": "NODE_ENV=test mocha",
+    "test:watch": "NODE_ENV=test mocha --watch",
     "test:coverage": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test"
   },
   "keywords": [

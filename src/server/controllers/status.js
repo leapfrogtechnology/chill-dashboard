@@ -1,5 +1,4 @@
 import {Router} from 'express';
-import HttpStatus from 'http-status-codes';
 import * as statusService from '../services/status';
 
 const router = Router();

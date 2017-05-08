@@ -30,7 +30,7 @@ export function genericErrorHandler(err, req, res, next) {  // eslint-disable-li
   if (err.stack) {
     logger.debug(err.stack);
   }
-  console.log(err);
+  logger.error(err);
 
   let error = buildError(err);
   res.status(error.code).json({error});

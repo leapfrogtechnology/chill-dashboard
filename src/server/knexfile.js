@@ -1,6 +1,3 @@
-require('babel-register');
-require('dotenv').config({path: __dirname + '/../.env'});
-
 /**
  * Database configuration.
  */
