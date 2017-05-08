@@ -5,16 +5,7 @@
         <div class="navbar-header">
           <a class="navbar-brand">Chill</a>
         </div>
-
-        <div class="navbar-default sidebar" role="navigation">
-          <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
-              <li>
-                <a><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <sidebar></sidebar>
       </nav>
 
       <div id="page-wrapper">
@@ -25,8 +16,13 @@
 </template>
 
 <script>
+  import Sidebar from './components/sidebar/Sidebar.vue'
+
   export default {
-    name: 'app'
+    name: 'app',
+    components: {
+      Sidebar
+    }
   }
 </script>
 

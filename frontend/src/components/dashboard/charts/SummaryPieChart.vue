@@ -1,11 +1,13 @@
 <template>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <i class="fa fa-pie-chart"></i>
-      Chart
-    </div>
-    <div class="panel-body">
-      <div id="container-hawa" style="height:200px;"></div>
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="fa fa-pie-chart"></i>
+        Summary
+      </div>
+      <div class="panel-body">
+        <div id="chart-container" style="height:230px;"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -16,11 +18,9 @@
   export default {
     name: 'SummaryPieChart',
     props: ['count'],
-    mounted: function () {
-      console.log(Highcharts)
-      console.log(this)
 
-      Highcharts.chart('container-hawa', {
+    mounted: function () {
+      Highcharts.chart('chart-container', {
         chart: {
           plotBackgroundColor: null,
           plotBorderWidth: null,

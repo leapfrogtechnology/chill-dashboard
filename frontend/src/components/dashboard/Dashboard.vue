@@ -7,23 +7,17 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <summary-pie-chart :count="instanceCount"></summary-pie-chart>
+        <div class="row">
+          <services-summary :count="instanceCount"></services-summary>
+          <summary-pie-chart :count="instanceCount"></summary-pie-chart>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <services-summary :count="instanceCount"></services-summary>
+          <logs></logs>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            List
-          </div>
-          <div class="panel-body">
-            Here should be the list
-          </div>
-        </div>
-      </div>
+      <summary-table></summary-table>
     </div>
   </div>
 </template>
@@ -31,12 +25,16 @@
 <script>
   import SummaryPieChart from './charts/SummaryPieChart.vue'
   import ServicesSummary from './summary/Summary.vue'
+  import Logs from './logs/Logs.vue'
+  import SummaryTable from './services/Table.vue'
 
   export default {
     name: 'dashboard',
     components: {
       SummaryPieChart,
-      ServicesSummary
+      ServicesSummary,
+      Logs,
+      SummaryTable
     },
 
     data: function () {
