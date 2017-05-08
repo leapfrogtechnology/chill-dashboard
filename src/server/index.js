@@ -1,9 +1,10 @@
-import './db';
-import './env';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import express from 'express';
+
+import './db';
+import './env';
 import routes from './routes';
 import logger from './utils/logger';
 import bodyParser from 'body-parser';

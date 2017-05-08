@@ -1,5 +1,5 @@
 {
-  "name": "node-chill-dashboard",
+  "name": "chill-dashboard",
   "version": "1.0.0",
   "description": "Chill dashboard - The monitoring tool.",
   "scripts": {
