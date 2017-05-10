@@ -1,30 +1,25 @@
-# frontend
+# Chill Dashboard
 
-> Dashboard for chill
+A simple service monitoring tool.
 
-## Build Setup
+## Setup
 
-``` bash
-# install dependencies
-npm install
+Install dependencies
+```bash
+# Using npm
+$ npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# Or using yarn
+$ yarn
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+cp chill.example.db chill.db
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Then start the app
+```
+$ npm start:dev
+```
+
+## License
+
+Chill is licensed under the [MIT License](LICENSE.md).
