@@ -11,7 +11,10 @@
     "mocha": true,
     "browser": true
   },
-  "extends": ["eslint:recommended", "standard"],
+  "extends": "standard",
+  "plugins": [
+    "html"
+  ],
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module"
