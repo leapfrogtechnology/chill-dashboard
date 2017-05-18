@@ -1,5 +1,5 @@
 import Boom from 'boom';
-import Status from '../models/status';
+import Status from '../models/Status';
 
 /**
  * Get all status.
