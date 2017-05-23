@@ -536,3 +536,33 @@ table.dataTable thead .sorting:after {
 .page-header {
   text-align: left;
 }
+
+.navbar {
+  margin-bottom: 0;
+}
+
+#chart-container {
+  height: 240px;
+}
+
+.logs-wrapper {
+  height: 472px;
+}
+
+.services-wrapper .table thead>tr>td{
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+td .fa-arrow-up {
+  color: green;
+}
+
+td .fa-arrow-down {
+  color: red;
+}
+
+td {
+  text-align: center;
+}
