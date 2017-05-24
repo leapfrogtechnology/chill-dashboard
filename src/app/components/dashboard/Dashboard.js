@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import config from '../../config';
+import { SUCCESS } from '../../constants/HTTPStatus';
+
 import ServicesSummary from './services-summary/ServicesSummary';
 import SummaryPieChart from './charts/SummaryPieChart';
 import Logs from './logs/Logs';
 import ServicesTable from './table/ServicesTable';
+
 
 class Dashboard extends Component {
   constructor(props) {
@@ -18,9 +22,10 @@ class Dashboard extends Component {
   }
 
   componentWillMount() {
-    axios.get('http://localhost:8000/api/status').then((result) => {
-      let totalRunning = result.data.data.filter(service => service.status === 200).length;
+    axios.get(`${config.API_ENDPOINT}/api/status`).then((result) => {
+      let totalRunning = result.data.data.filter(service => service.status === SUCCESS).length;
       let totalStopped = result.data.data.length - totalRunning;
+
       this.setState({services: result.data.data, totalRunning: totalRunning, totalStopped: totalStopped});
     });
   }

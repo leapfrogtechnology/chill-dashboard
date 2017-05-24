@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import routeConstants from './constants/routeConstants';
+import routes from './constants/routes';
 
 import Dashboard from './components/dashboard/Dashboard';
 import Sidebar from './components/sidebar/Sidebar';
@@ -15,12 +15,12 @@ const Router = () => (
         <div className="navbar-header">
           <a className="navbar-brand">Chill</a>
         </div>
-        <Sidebar></Sidebar>
+        <Sidebar />
       </div>
 
       <div id="page-wrapper">
         <Switch>
-          <Route exact path={routeConstants.DASHBOARD} component={Dashboard}/>
+          <Route exact path={routes.DASHBOARD} component={Dashboard}/>
         </Switch>
       </div>
     </div>

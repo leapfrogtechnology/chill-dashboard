@@ -8,7 +8,7 @@ const ServicesSummary = ({totalRunning, totalStopped}) => (
           <div className="panel-heading">
             <div className="row">
               <div className="col-xs-3">
-                <i className="fa fa-arrow-up fa-5x"></i>
+                <i className="fa fa-arrow-up fa-5x"/>
               </div>
               <div className="col-xs-9 text-right">
                 <div className="huge">{totalRunning}</div>
@@ -27,7 +27,7 @@ const ServicesSummary = ({totalRunning, totalStopped}) => (
           <div className="panel-heading">
             <div className="row">
               <div className="col-xs-3">
-                <i className="fa fa-arrow-down fa-5x"></i>
+                <i className="fa fa-arrow-down fa-5x"/>
               </div>
               <div className="col-xs-9 text-right">
                 <div className="huge">{totalStopped}</div>

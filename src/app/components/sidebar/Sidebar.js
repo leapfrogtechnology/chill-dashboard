@@ -1,16 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Sidebar = () => (
-  <div className="navbar-default sidebar">
-    <div className="sidebar-nav navbar-collapse">
-      <ul className="nav" id="side-menu">
-        <li>
-          <a><i className="fa fa-dashboard fa-fw"/> <Link to='/'>Dashboard</Link></a>
-        </li>
-      </ul>
+const Sidebar = (props) => {
+  console.log(props)
+  return (
+    <div className="navbar-default sidebar">
+      <div className="sidebar-nav navbar-collapse">
+        <ul className="nav" id="side-menu">
+          <li>
+            <NavLink to='/' activeClassName="selected"><i className="fa fa-dashboard fa-fw"/> Dashboard</NavLink>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-);
-
+  );
+}
 export default Sidebar;

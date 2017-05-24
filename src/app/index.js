@@ -6,8 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/custom.css';
 import 'font-awesome/css/font-awesome.min.css';
 
-import Sidebar from './components/sidebar/Sidebar';
-
 import Router from './routes';
 
 const mountNode = document.getElementById('app');
@@ -24,6 +22,6 @@ const renderApp = () => {
 renderApp();
 
 // Hot Module Replacement API
-/*if (module.hot) {
+if (module.hot) {
  module.hot.accept('./routes', () => renderApp());
- }*/
+ }

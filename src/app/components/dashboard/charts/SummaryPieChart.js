@@ -1,51 +1,18 @@
 import React, { Component } from 'react';
 
-import * as Highcharts from 'highcharts';
-
+import { drawPieChart } from './service';
 class ServicesPieChart extends Component {
   constructor(props) {
     super(props);
   }
 
   componentWillReceiveProps(nextProps) {
-    let total = nextProps.totalRunning + nextProps.totalStopped;
+    let data = [
+      {name: 'Running', y: nextProps.totalRunning},
+      {name: 'Stopped', y: nextProps.totalStopped}
+    ];
 
-    Highcharts.chart('chart-container', {
-      chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-      },
-      title: {
-        text: ''
-      },
-      tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-      },
-      credits: false,
-      plotOptions: {
-        pie: {
-          allowPointSelect: true,
-          cursor: 'pointer',
-          dataLabels: {
-            enabled: true,
-            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-            style: {
-              color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-            }
-          }
-        }
-      },
-      series: [{
-        name: 'Server',
-        colorByPoint: true,
-        data: [
-          {name: 'Running', y: nextProps.totalRunning / total},
-          {name: 'Stopped', y: nextProps.totalStopped / total}
-        ]
-      }]
-    });
+    drawPieChart(data, 'chart-container');
   }
 
   render() {

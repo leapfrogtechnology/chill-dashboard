@@ -1,4 +1,5 @@
 import React from 'react';
+import { SUCCESS } from '../../../constants/HTTPStatus';
 
 const ServicesTable = ({services}) => (
   <div className="col-lg-12 services-wrapper">
@@ -17,10 +18,11 @@ const ServicesTable = ({services}) => (
             <tbody>
             {services.map(service =>
               <tr>
-              <td>{service.name}</td>
-                <td>{service.status === 200  ? <i className="fa fa-arrow-up" style={{color: 'green'}}></i> : <i className="fa fa-arrow-down" />}</td>
-              <td>{service.timestamp}</td>
-            </tr>)}
+                <td>{service.name}</td>
+                <td>{service.status === SUCCESS ? <i className="fa fa-arrow-up" style={{color: 'green'}}/> :
+                  <i className="fa fa-arrow-down" style={{color: 'red'}}/>}</td>
+                <td>{service.status === SUCCESS ? 'Active' : service.timestamp}</td>
+              </tr>)}
             </tbody>
           </table>
         </div>

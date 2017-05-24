@@ -555,14 +555,18 @@ table.dataTable thead .sorting:after {
   padding-bottom: 12px;
 }
 
-td .fa-arrow-up {
+.services-wrapper td .fa-arrow-up {
   color: green;
 }
 
-td .fa-arrow-down {
+.services-wrapper td .fa-arrow-down {
   color: red;
 }
 
-td {
+.services-wrapper td {
   text-align: center;
+}
+
+.sidebar .selected {
+  background: #f1f0f0;
 }
