@@ -64,7 +64,8 @@ module.exports = {
       template: resolve(__dirname, 'public/index.html')
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env.API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT)
     }),
     new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
     new webpack.NoEmitOnErrorsPlugin(), // do not emit compiled assets that include errors
