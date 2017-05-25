@@ -4,7 +4,7 @@
   "description": "Chill dashboard - The monitoring tool.",
   "scripts": {
     "start:f:dev": "webpack-dev-server",
-    "start:f:build": "node build/build.js",
+    "start:f:build": "rimraf dist && webpack --progress --colors",
     "lint": "eslint src test; exit 0",
     "lint:fix": "eslint src test --fix; exit 0",
     "start:dev": "nodemon --watch .env --watch src/server --exec babel-node src/server --source-maps",
