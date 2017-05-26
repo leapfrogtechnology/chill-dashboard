@@ -1,7 +1,7 @@
 import * as Highcharts from 'highcharts';
 
 export function drawPieChart(data, containerId) {
-  Highcharts.chart(containerId, {
+  const config = {
     chart: {
       plotBackgroundColor: null,
       plotBorderWidth: null,
@@ -33,6 +33,8 @@ export function drawPieChart(data, containerId) {
       colorByPoint: true,
       data: data
     }]
-  });
+  };
+
+  Highcharts.chart(containerId, config);
 
 }

@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import HttpStatus from 'http-status-codes';
 
-import config from '../../config';
-import { SUCCESS } from '../../constants/HTTPStatus';
-
-import ServicesSummary from './services-summary/ServicesSummary';
-import SummaryPieChart from './charts/SummaryPieChart';
-import Logs from './logs/Logs';
+// import Logs from './logs/Logs;
 import ServicesTable from './table/ServicesTable';
+import SummaryPieChart from './charts/SummaryPieChart';
+import ServicesSummary from './services-summary/ServicesSummary';
 
+import * as statusService from '../../services/statusService';
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       services: [],
@@ -21,13 +19,17 @@ class Dashboard extends Component {
     };
   }
 
-  componentWillMount() {
-    axios.get(`${config.API_ENDPOINT}/api/status`).then((result) => {
-      let totalRunning = result.data.data.filter(service => service.status === SUCCESS).length;
+  async componentWillMount() {
+    try {
+      const result = await statusService.getAll();
+
+      let totalRunning = result.data.data.filter(service => service.status === HttpStatus.OK).length;
       let totalStopped = result.data.data.length - totalRunning;
 
-      this.setState({services: result.data.data, totalRunning: totalRunning, totalStopped: totalStopped});
-    });
+      this.setState({ services: result.data.data, totalRunning: totalRunning, totalStopped: totalStopped });
+    } catch (err) {
+      // TODO: Handle error
+    }
   }
 
   render() {
@@ -41,20 +43,19 @@ class Dashboard extends Component {
         <div className="row">
           <div className="col-xs-12 col-sm-6">
             <div className="row">
-              <ServicesSummary totalRunning={this.state.totalRunning} totalStopped={this.state.totalStopped}/>
-              <SummaryPieChart totalRunning={this.state.totalRunning} totalStopped={this.state.totalStopped}/>
+              <ServicesSummary totalRunning={this.state.totalRunning} totalStopped={this.state.totalStopped} />
+              <SummaryPieChart totalRunning={this.state.totalRunning} totalStopped={this.state.totalStopped} />
             </div>
           </div>
           <div className="col-xs-12 col-sm-6">
-            <Logs />
+            {/* <Logs />*/}
           </div>
         </div>
         <div className="row">
-          <ServicesTable services={this.state.services}/>
+          <ServicesTable services={this.state.services} />
         </div>
       </div>
     );
-
   }
 }
 

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 import { drawPieChart } from './service';
+
 class ServicesPieChart extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
   }
 
   componentWillReceiveProps(nextProps) {

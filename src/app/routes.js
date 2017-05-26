@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import routes from './constants/routes';
+import * as routes from './constants/routes';
 
-import Dashboard from './components/dashboard/Dashboard';
 import Sidebar from './components/sidebar/Sidebar';
+import Dashboard from './components/dashboard/Dashboard';
 
 const baseHref = process.env.BASE_HREF || '/';
 
@@ -20,7 +20,7 @@ const Router = () => (
 
       <div id="page-wrapper">
         <Switch>
-          <Route exact path={routes.DASHBOARD} component={Dashboard}/>
+          <Route exact path={routes.DASHBOARD} component={Dashboard} />
         </Switch>
       </div>
     </div>

@@ -1,5 +1,1 @@
-const routes = {
-  DASHBOARD: '/',
-};
-
-export default routes;
+export const DASHBOARD = '/';
