@@ -21,7 +21,7 @@ const ServicesTable = ({services}) => (
                 <td>{service.name}</td>
                 <td>{service.status === HttpStatus.OK ? <i className="fa fa-arrow-up" style={{color: 'green'}}/> :
                   <i className="fa fa-arrow-down" style={{color: 'red'}}/>}</td>
-                <td>{service.status === HttpStatus.OK ? 'Active' : service.timestamp}</td>
+                <td>{service.createdAt}</td>
               </tr>)}
             </tbody>
           </table>
