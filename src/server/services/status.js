@@ -16,8 +16,10 @@ export async function getAllStatus() {
  * @param  {String} id
  * @return {Promise}
  */
-export async function fetchByName(name) {
-  return await new Status({ name }).groupBy('name').orderBy('created_at', 'DSC').fetch().attributes;
+export async function getStatusGroupedByName() {
+  return await new Status().query(qb => qb.groupBy('name')
+                                          .orderBy('created_at', 'DSC'))
+                           .fetchAll();
 }
 
 /**
