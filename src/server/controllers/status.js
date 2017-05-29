@@ -7,7 +7,7 @@ const router = Router();
  * GET /api/status
  */
 router.get('/', (req, res, next) => {
-  statusService.getStatusGroupedByName()
+  statusService.fetchLatestStatuses()
     .then(data => res.json({data}))
     .catch(err => next(err));
 });
