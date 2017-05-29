@@ -6,20 +6,18 @@ import Status from '../models/Status';
  *
  * @return {Promise}
  */
-export async function getAllStatus() {
-  return await Status.fetchAll();
+export function getAllStatus() {
+  return Status.fetchAll();
 }
 
 /**
- * Fetch a service by its name.
+ * Fetch a service grouped by it's name.
  *
  * @param  {String} id
  * @return {Promise}
  */
-export async function getStatusGroupedByName() {
-  return await new Status().query(qb => qb.groupBy('name')
-                                          .orderBy('created_at', 'DSC'))
-                           .fetchAll();
+export function fetchLatestStatuses() {
+  return Status.fetchLatestStatuses();
 }
 
 /**
