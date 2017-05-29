@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import * as routes from './constants/routes';
-
 import Sidebar from './components/sidebar/Sidebar';
 import Dashboard from './components/dashboard/Dashboard';
 

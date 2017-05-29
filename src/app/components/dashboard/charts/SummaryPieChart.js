@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { drawPieChart } from './service';
 
-class ServicesPieChart extends Component {
+class SummaryPieChart extends Component {
   constructor() {
     super();
   }
@@ -33,4 +33,4 @@ class ServicesPieChart extends Component {
   }
 }
 
-export default ServicesPieChart;
+export default SummaryPieChart;
