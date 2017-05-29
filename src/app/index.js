@@ -2,11 +2,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './assets/css/custom.css';
-import 'font-awesome/css/font-awesome.min.css';
-
 import Router from './routes';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+import './assets/css/custom.css';
 
 const mountNode = document.getElementById('app');
 

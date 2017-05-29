@@ -36,5 +36,4 @@ export function drawPieChart(data, containerId) {
   };
 
   Highcharts.chart(containerId, config);
-
 }

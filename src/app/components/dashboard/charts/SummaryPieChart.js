@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 
 import { drawPieChart } from './service';
 
-class ServicesPieChart extends Component {
-  constructor() {
-    super();
-  }
-
+class SummaryPieChart extends Component {
   componentWillReceiveProps(nextProps) {
     let data = [
       {name: 'Running', y: nextProps.totalRunning},
@@ -33,4 +29,4 @@ class ServicesPieChart extends Component {
   }
 }
 
-export default ServicesPieChart;
+export default SummaryPieChart;
