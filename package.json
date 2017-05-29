@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Chill dashboard - The monitoring tool.",
   "scripts": {
-    "start:f:dev": "webpack-dev-server",
-    "start:f:build": "rimraf dist && webpack --progress --colors",
+    "start:client": "webpack-dev-server",
+    "build:client": "rimraf dist && webpack --progress --colors",
     "lint": "eslint src test; exit 0",
     "lint:fix": "eslint src test --fix; exit 0",
-    "start:dev": "nodemon --watch .env --watch src/server --exec babel-node src/server --source-maps",
+    "start:server": "nodemon --watch .env --watch src/server --exec babel-node src/server --source-maps",
     "test": "NODE_ENV=test mocha",
     "test:watch": "NODE_ENV=test mocha --watch",
     "test:coverage": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test"
@@ -17,7 +17,7 @@
     "dashboard"
   ],
   "private": true,
-  "author": [],
+  "authors": [],
   "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",
