@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 import { drawPieChart } from './service';
 
 class SummaryPieChart extends Component {
-  constructor() {
-    super();
-  }
-
   componentWillReceiveProps(nextProps) {
     let data = [
       {name: 'Running', y: nextProps.totalRunning},
