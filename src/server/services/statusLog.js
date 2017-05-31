@@ -1,23 +1,23 @@
 import Boom from 'boom';
-import Status from '../models/Status';
+import StatusLog from '../models/StatusLog';
 
 /**
- * Get all status.
+ * Get all status logs.
  *
  * @return {Promise}
  */
-export function getAllStatus() {
-  return Status.fetchAll();
+export function getAllStatusLogs() {
+  return StatusLog.fetchAll();
 }
 
 /**
- * Fetch a service grouped by it's name.
+ * Fetch latest status logs.
  *
  * @param  {String} id
  * @return {Promise}
  */
-export function fetchLatestStatuses() {
-  return Status.fetchLatestStatuses();
+export function fetchLatestStatusLogs() {
+  return StatusLog.fetchLatestStatusLogs();
 }
 
 /**
@@ -27,7 +27,7 @@ export function fetchLatestStatuses() {
  * @return {Promise}
  */
 export async function getStatus(id) {
-  return await new Status({ id }).fetch()
+  return await new StatusLog({ id }).fetch()
     .then(status => {
       if (!status) {
         throw new Boom.notFound('Service not found');

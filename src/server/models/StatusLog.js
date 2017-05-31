@@ -1,6 +1,6 @@
 import bookshelf from '../db';
 
-const TABLE_NAME = 'status_changes';
+const TABLE_NAME = 'status_logs';
 
 class Status extends bookshelf.Model {
   get tableName() {
@@ -11,8 +11,8 @@ class Status extends bookshelf.Model {
     return true;
   }
 
-  static fetchLatestStatuses() {
-    return this.query(qb => qb.groupBy('name') .orderBy('created_at', 'DSC'))
+  static fetchLatestStatusLogs() {
+    return this.query(qb => qb.groupBy('name') .orderBy('created_at', 'DESC'))
                .fetchAll();
   }
 }
