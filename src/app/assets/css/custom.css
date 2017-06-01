@@ -563,8 +563,14 @@ table.dataTable thead .sorting:after {
   color: red;
 }
 
-.services-wrapper td {
+.services-wrapper table td,
+.services-wrapper table th {
+  padding: 10px 15px;
   text-align: center;
+}
+
+.services-wrapper table .service-name {
+  text-align: left;
 }
 
 .sidebar .selected {
