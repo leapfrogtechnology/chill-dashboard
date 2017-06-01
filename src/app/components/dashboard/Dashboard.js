@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
-import ServicesTable from './table/ServicesTable';
-import SummaryPieChart from './charts/SummaryPieChart';
-import ServicesSummary from './services-summary/ServicesSummary';
-
+import MainWrapper from './MainWrapper';
 import * as statusService from '../../services/status';
 
 class Dashboard extends Component {
@@ -33,29 +30,8 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { services, totalRunning, totalStopped } = this.state;
-
     return (
-      <div>
-        <div className="row">
-          <div className="col-lg-12">
-            <h1 className="page-header">Dashboard</h1>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-xs-12 col-sm-6">
-            <div className="row">
-              <ServicesSummary totalRunning={totalRunning} totalStopped={totalStopped} />
-              <SummaryPieChart totalRunning={totalRunning} totalStopped={totalStopped} />
-            </div>
-          </div>
-          <div className="col-xs-12 col-sm-6">
-          </div>
-        </div>
-        <div className="row">
-          <ServicesTable services={services} />
-        </div>
-      </div>
+      <MainWrapper {...this.state} />
     );
   }
 }
