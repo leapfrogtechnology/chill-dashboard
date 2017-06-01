@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import swaggerSpec from './utils/swagger';
-import statusController from './controllers/status';
+import statusLogController from './controllers/statusLog';
 
 /**
  * Contains all API routes for the application.
@@ -52,6 +52,6 @@ router.get('/', (req, res) => {
   });
 });
 
-router.use('/status', statusController);
+router.use('/status', statusLogController);
 
 export default router;

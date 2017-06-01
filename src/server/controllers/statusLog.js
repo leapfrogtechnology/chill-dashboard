@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import * as statusService from '../services/status';
+import * as statusLogService from '../services/statusLog';
 
 const router = Router();
 
@@ -7,8 +7,8 @@ const router = Router();
  * GET /api/status
  */
 router.get('/', (req, res, next) => {
-  statusService.getAllStatus()
-    .then(data => res.json({data}))
+  statusLogService.fetchLatestStatusLogs()
+    .then(data => res.json(data))
     .catch(err => next(err));
 });
 
@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
  * GET /api/status/:id
  */
 router.get('/:id', (req, res, next) => {
-  statusService.getStatus(req.params.id)
+  statusLogService.getStatus(req.params.id)
     .then(data => res.json({data}))
     .catch(err => next(err));
 });

@@ -536,3 +536,43 @@ table.dataTable thead .sorting:after {
 .page-header {
   text-align: left;
 }
+
+.navbar {
+  margin-bottom: 0;
+}
+
+#chart-container {
+  height: 240px;
+}
+
+.logs-wrapper {
+  height: 472px;
+}
+
+.services-wrapper .table thead>tr>td{
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.services-wrapper td .fa-arrow-up {
+  color: green;
+}
+
+.services-wrapper td .fa-arrow-down {
+  color: red;
+}
+
+.services-wrapper table td,
+.services-wrapper table th {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.services-wrapper table .service-name {
+  text-align: left;
+}
+
+.sidebar .selected {
+  background: #f1f0f0;
+}
