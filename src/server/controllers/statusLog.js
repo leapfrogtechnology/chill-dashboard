@@ -8,7 +8,7 @@ const router = Router();
  */
 router.get('/', (req, res, next) => {
   statusLogService.fetchLatestStatusLogs()
-    .then(data => res.json({data}))
+    .then(data => res.json(data))
     .catch(err => next(err));
 });
 

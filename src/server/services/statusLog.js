@@ -6,14 +6,13 @@ import StatusLog from '../models/StatusLog';
  *
  * @return {Promise}
  */
-export function getAllStatusLogs() {
+export function fetchLogs() {
   return StatusLog.fetchAll();
 }
 
 /**
  * Fetch latest status logs.
  *
- * @param  {String} id
  * @return {Promise}
  */
 export function fetchLatestStatusLogs() {
@@ -23,16 +22,15 @@ export function fetchLatestStatusLogs() {
 /**
  * Get a service status.
  *
- * @param  {string|Number}  id
+ * @param  {String|Number}  id
  * @return {Promise}
  */
 export async function getStatus(id) {
-  return await new StatusLog({ id }).fetch()
-    .then(status => {
-      if (!status) {
-        throw new Boom.notFound('Service not found');
-      }
+  let status = await new StatusLog({ id }).fetch();
 
-      return status;
-    });
+  if (!status) {
+    throw new Boom.notFound('Service not found');
+  }
+
+  return status;
 }

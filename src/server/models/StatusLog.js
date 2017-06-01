@@ -2,7 +2,7 @@ import bookshelf from '../db';
 
 const TABLE_NAME = 'status_logs';
 
-class Status extends bookshelf.Model {
+class StatusLog extends bookshelf.Model {
   get tableName() {
     return TABLE_NAME;
   }
@@ -17,4 +17,4 @@ class Status extends bookshelf.Model {
   }
 }
 
-export default Status;
+export default StatusLog;
