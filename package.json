@@ -1,7 +1,7 @@
 {
   "name": "chill-dashboard",
-  "version": "1.0.0",
-  "description": "Chill dashboard - The monitoring tool.",
+  "version": "1.0.0-alpha",
+  "description": "Chill Dashboard",
   "scripts": {
     "start": "run-p start:app start:server",
     "start:app": "webpack-dev-server",
