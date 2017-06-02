@@ -1,3 +1,4 @@
+const path = require('path');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 const resolve = require('path').resolve;
@@ -11,14 +12,14 @@ dotenv.config();
 const baseHref = process.env.BASE_HREF;
 
 module.exports = {
-  entry: './src/app/index.js', // the entry point of our app
+  context: resolve(__dirname, 'src/app'),
+  entry: './index.js', // the entry point of our app
   output: {
     publicPath: `/${process.env.BASE_HREF}`,
     chunkFilename: '[id].js',
     path: resolve(__dirname, 'dist/app'),
     filename: 'js/bundle.[chunkhash].js' // the output bundle
   },
-  context: resolve(__dirname, 'src'),
   module: {
     rules: [
       {
@@ -55,7 +56,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
-      'process.env.BASE_HREF': JSON.stringify(process.env.BASE_HREF)
+      'process.env.BASE_HREF': JSON.stringify(process.env.BASE_HREF),
+      'process.env.API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT)
     }),
     new webpack.optimize.UglifyJsPlugin()
   ]

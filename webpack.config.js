@@ -12,7 +12,7 @@ module.exports = {
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8181', // WebpackDevServer host and port
     'webpack/hot/only-dev-server', // 'only' prevents reload on syntax errors
-    './app/index.js'// the entry point of our app
+    './index.js'// the entry point of our app
   ],
   output: {
     publicPath: '/',
@@ -20,7 +20,7 @@ module.exports = {
     chunkFilename: '[id].js',
     path: resolve(__dirname, 'dist/app')
   },
-  context: resolve(__dirname, 'src'),
+  context: resolve(__dirname, 'src/app'),
   devtool: 'inline-source-map',
   devServer: {
     port: 8181,
