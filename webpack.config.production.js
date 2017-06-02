@@ -1,4 +1,3 @@
-const path = require('path');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 const resolve = require('path').resolve;
@@ -15,7 +14,7 @@ module.exports = {
   context: resolve(__dirname, 'src/app'),
   entry: './index.js', // the entry point of our app
   output: {
-    publicPath: `/${process.env.BASE_HREF}`,
+    publicPath: '/',
     chunkFilename: '[id].js',
     path: resolve(__dirname, 'dist/app'),
     filename: 'js/bundle.[chunkhash].js' // the output bundle
