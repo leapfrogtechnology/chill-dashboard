@@ -1,6 +1,6 @@
 {
   "name": "chill-dashboard",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-alpha.1",
   "description": "Chill Dashboard",
   "scripts": {
     "start": "run-p start:app start:server",
