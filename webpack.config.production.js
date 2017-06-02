@@ -15,7 +15,7 @@ module.exports = {
   output: {
     publicPath: `/${process.env.BASE_HREF}`,
     chunkFilename: '[id].js',
-    path: resolve(__dirname, 'dist'),
+    path: resolve(__dirname, 'dist/app'),
     filename: 'js/bundle.[chunkhash].js' // the output bundle
   },
   context: resolve(__dirname, 'src'),

@@ -18,7 +18,7 @@ module.exports = {
     publicPath: '/',
     filename: 'js/bundle.js', // the output bundle
     chunkFilename: '[id].js',
-    path: resolve(__dirname, 'dist')
+    path: resolve(__dirname, 'dist/app')
   },
   context: resolve(__dirname, 'src'),
   devtool: 'inline-source-map',
