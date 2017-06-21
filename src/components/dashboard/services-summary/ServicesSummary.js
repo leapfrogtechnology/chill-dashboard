@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ServicesSummary = ({ totalRunning, totalStopped }) => (
   <div className="col-xs-12">
@@ -43,5 +44,10 @@ const ServicesSummary = ({ totalRunning, totalStopped }) => (
     </div>
   </div>
 );
+
+ServicesSummary.propTypes = {
+  totalRunning: PropTypes.string,
+  totalStopped: PropTypes.string
+};
 
 export default ServicesSummary;

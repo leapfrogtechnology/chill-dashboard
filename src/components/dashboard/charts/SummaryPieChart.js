@@ -1,5 +1,5 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
 import { drawPieChart } from './service';
 
 class SummaryPieChart extends Component {
@@ -29,4 +29,8 @@ class SummaryPieChart extends Component {
   }
 }
 
+SummaryPieChart.propTypes = {
+  totalRunning: PropTypes.string,
+  totalStopped: PropTypes.string
+};
 export default SummaryPieChart;
