@@ -10,17 +10,15 @@ dotenv.config();
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8181', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server', // 'only' prevents reload on syntax errors
     './index.js'// the entry point of our app
   ],
   output: {
     publicPath: '/',
     filename: 'js/bundle.js', // the output bundle
     chunkFilename: '[id].js',
-    path: resolve(__dirname, 'dist/app')
+    path: resolve(__dirname, 'dist')
   },
-  context: resolve(__dirname, 'src/app'),
+  context: resolve(__dirname, 'src'),
   devtool: 'inline-source-map',
   devServer: {
     port: 8181,
