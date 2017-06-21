@@ -30,8 +30,8 @@ const MainWrapper = (props) => (
 );
 
 MainWrapper.propTypes = {
+  services: PropTypes.array,
   totalRunning: PropTypes.string,
-  totalStopped: PropTypes.string,
-  services: PropTypes.array
+  totalStopped: PropTypes.string
 };
 export default MainWrapper;
