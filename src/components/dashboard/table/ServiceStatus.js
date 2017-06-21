@@ -11,6 +11,6 @@ const ServiceStatus = ({ service }) => {
   return (
     <i className="fa fa-arrow-down" style={{ color: 'red' }} />
   );
-}
+};
 
 export default ServiceStatus;

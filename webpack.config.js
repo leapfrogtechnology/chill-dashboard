@@ -10,6 +10,8 @@ dotenv.config();
 module.exports = {
   entry: [
     'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8181', // WebpackDevServer host and port
+    'webpack/hot/only-dev-server', // 'only' prevents reload on syntax errors
     './index.js'// the entry point of our app
   ],
   output: {

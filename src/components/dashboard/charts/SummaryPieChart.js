@@ -5,8 +5,8 @@ import { drawPieChart } from './service';
 class SummaryPieChart extends Component {
   componentWillReceiveProps(nextProps) {
     let data = [
-      {name: 'Running', y: nextProps.totalRunning},
-      {name: 'Stopped', y: nextProps.totalStopped}
+      { name: 'Running', y: nextProps.totalRunning },
+      { name: 'Stopped', y: nextProps.totalStopped }
     ];
 
     drawPieChart(data, 'chart-container');
