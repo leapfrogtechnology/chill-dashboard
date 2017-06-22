@@ -1,12 +1,12 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
 import { drawPieChart } from './service';
 
 class SummaryPieChart extends Component {
   componentWillReceiveProps(nextProps) {
     let data = [
-      {name: 'Running', y: nextProps.totalRunning},
-      {name: 'Stopped', y: nextProps.totalStopped}
+      { name: 'Running', y: nextProps.totalRunning },
+      { name: 'Stopped', y: nextProps.totalStopped }
     ];
 
     drawPieChart(data, 'chart-container');
@@ -29,4 +29,8 @@ class SummaryPieChart extends Component {
   }
 }
 
+SummaryPieChart.propTypes = {
+  totalRunning: PropTypes.string,
+  totalStopped: PropTypes.string
+};
 export default SummaryPieChart;

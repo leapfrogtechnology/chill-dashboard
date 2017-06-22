@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ServicesTable from './table/ServicesTable';
 import SummaryPieChart from './charts/SummaryPieChart';
@@ -28,4 +29,9 @@ const MainWrapper = (props) => (
   </div>
 );
 
+MainWrapper.propTypes = {
+  services: PropTypes.array,
+  totalRunning: PropTypes.string,
+  totalStopped: PropTypes.string
+};
 export default MainWrapper;

@@ -10,12 +10,12 @@ dotenv.config();
 const baseHref = process.env.BASE_HREF;
 
 module.exports = {
-  context: path.resolve(__dirname, 'src/app'),
+  context: path.resolve(__dirname, 'src'),
   entry: './index.js', // the entry point of our app
   output: {
     publicPath: `/`,
     chunkFilename: '[id].js',
-    path: path.resolve(__dirname, 'dist/app'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'js/bundle.[chunkhash].js' // the output bundle
   },
   module: {

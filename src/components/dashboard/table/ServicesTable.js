@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import ServiceStatus from './ServiceStatus';
 
 const ServicesTable = ({ services }) => (
@@ -31,5 +32,9 @@ const ServicesTable = ({ services }) => (
     </div>
   </div>
 );
+
+ServicesTable.propTypes = {
+  services: PropTypes.array
+};
 
 export default ServicesTable;
