@@ -9,20 +9,9 @@ const baseHref = process.env.BASE_HREF || '/';
 
 const Router = () => (
   <BrowserRouter basename={baseHref}>
-    <div id="wrapper">
-      <div className="navbar navbar-default navbar-static-top">
-        <div className="navbar-header">
-          <a className="navbar-brand">Chill</a>
-        </div>
-        <Sidebar />
-      </div>
-
-      <div id="page-wrapper">
-        <Switch>
-          <Route exact path={routes.DASHBOARD} component={Dashboard} />
-        </Switch>
-      </div>
-    </div>
+    <Switch>
+      <Route exact path={routes.DASHBOARD} component={Dashboard} />
+    </Switch>
   </BrowserRouter>
 );
 
