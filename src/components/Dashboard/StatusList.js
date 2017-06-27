@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
-import * as status from '../../services/status';
+import {
+  isUp,
+  STATUS_UP_CLASS,
+  STATUS_UP_MESSAGE,
+  STATUS_DOWN_CLASS,
+  STATUS_DOWN_MESSAGE,
+  fetchServiceStatuses
+} from '../../services/status';
 
 import Panel from '../commons/Panel';
 import Spinner from '../commons/Spinner';
-
-const STATUS_UP_CLASS = 'status-up';
-const STATUS_UP_MESSAGE = 'Operational';
-const STATUS_DOWN_CLASS = 'status-down';
-const STATUS_DOWN_MESSAGE = 'Major Outage';
 
 class StatusList extends Component {
   constructor() {
@@ -32,7 +34,7 @@ class StatusList extends Component {
     this.setState({ isLoading: true });
 
     try {
-      let services = await status.fetchServiceStatuses();
+      let services = await fetchServiceStatuses();
 
       this.setState({
         services,
@@ -52,7 +54,7 @@ class StatusList extends Component {
    */
   isOperational(services) {
     for (let service of services) {
-      if (!status.isUp(service)) {
+      if (!isUp(service)) {
         return false;
       }
     }
@@ -91,7 +93,7 @@ class StatusList extends Component {
       let message = STATUS_UP_MESSAGE;
       let className = STATUS_UP_CLASS;
 
-      if (!status.isUp(service)) {
+      if (!isUp(service)) {
         message = STATUS_DOWN_MESSAGE;
         className = STATUS_DOWN_CLASS;
       }
