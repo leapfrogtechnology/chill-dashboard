@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   app: {
     logoUrl: process.env.APP_LOGO,
     logoHeight: process.env.APP_LOGO_HEIGHT || '80px'
