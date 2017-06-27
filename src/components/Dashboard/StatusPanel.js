@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 import {
   isUp,
   STATUS_UP_CLASS,
-  STATUS_UP_MESSAGE,
   STATUS_DOWN_CLASS,
   STATUS_DOWN_MESSAGE,
   fetchServiceStatuses
 } from '../../services/status';
 
 import Panel from '../commons/Panel';
+import ServiceList from './ServiceList';
 import Spinner from '../commons/Spinner';
 
-class StatusList extends Component {
+class StatusPanel extends Component {
   constructor() {
     super();
     this.state = {
@@ -82,31 +82,6 @@ class StatusList extends Component {
     };
   }
 
-  /**
-   * Render all services with their respective status.
-   * 
-   * @param {Array} services 
-   * @returns {Array} 
-   */
-  renderServices(services) {
-    return services.map((service) => {
-      let message = STATUS_UP_MESSAGE;
-      let className = STATUS_UP_CLASS;
-
-      if (!isUp(service)) {
-        message = STATUS_DOWN_MESSAGE;
-        className = STATUS_DOWN_CLASS;
-      }
-
-      return (
-        <li className="list-group-item" key={service.id} >
-          <span>{service.name}</span>
-          <span className={`list-item-right ${className}`}>{message}</span>
-        </li>
-      );
-    });
-  }
-
   render() {
     let { titleClass, message } = this.getParams(this.state.isOperational);
 
@@ -121,13 +96,13 @@ class StatusList extends Component {
         title={message}
         titleClass={titleClass}
       >
-        <ul className="list-group">
-          {this.renderServices(this.state.services)}
-        </ul>
+        <ServiceList
+          services={this.state.services}
+        />
       </Panel >
     );
   }
 }
 
-export default StatusList;
+export default StatusPanel;
 

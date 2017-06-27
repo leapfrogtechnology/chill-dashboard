@@ -1,10 +1,10 @@
 import React from 'react';
 
-import StatusList from './StatusList';
+import StatusPanel from './StatusPanel';
 
 const Dashboard = () => (
   <div className="page-wrapper wrapper">
-    <StatusList />
+    <StatusPanel />
   </div>
 );
 
