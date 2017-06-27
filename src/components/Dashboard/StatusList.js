@@ -51,9 +51,7 @@ class StatusList extends Component {
    * @returns {Boolean}
    */
   isOperational(services) {
-    for (let key in services) {
-      let service = services[key];
-
+    for (let service of services) {
       if (!status.isUp(service)) {
         return false;
       }
