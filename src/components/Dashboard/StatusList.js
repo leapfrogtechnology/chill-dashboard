@@ -24,7 +24,7 @@ class StatusList extends Component {
   }
 
   /**
-   * Fetch list of services 
+   * Fetch list of services. 
    * 
    * @returns {Promise}
    */
