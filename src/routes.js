@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { app } from './config';
+import config from './config';
 import routeConstants from './constants/routeConstants';
 
 import Dashboard from './components/Dashboard';
@@ -10,7 +10,7 @@ import Footer from './components/commons/Footer';
 
 const baseHref = process.env.BASE_HREF || '/';
 
-const { logoUrl, logoHeight } = app;
+const { logoUrl, logoHeight } = config.app;
 
 const Router = () => (
   <BrowserRouter basename={baseHref}>

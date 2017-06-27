@@ -4,13 +4,13 @@ const Footer = () => {
   return (
     <div className="wrapper page-footer">
       <div className="pull-right">
-        <span>
+        <span className="footer-text">
+          Powered By
           <a
             target="_blank"
-            className="footer-text"
             href="https://github.com/leapfrogtechnology/chill"
           >
-            Powered By Chill
+            {` Chill`}
           </a>
         </span>
       </div>
