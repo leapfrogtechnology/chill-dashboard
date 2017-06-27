@@ -64,7 +64,9 @@ module.exports = {
       template: resolve(__dirname, 'public/index.html')
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env.APP_LOGO': JSON.stringify(process.env.APP_LOGO),
+      'process.env.APP_LOGO_HEIGHT': JSON.stringify(process.env.APP_LOGO_HEIGHT),
+      'process.env.NODE_ENV': JSON.stringify('development'),
       'process.env.API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT)
     }),
     new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
