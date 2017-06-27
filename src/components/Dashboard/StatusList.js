@@ -45,7 +45,7 @@ class StatusList extends Component {
   }
 
   /**
-   * Check if any one of the service is nonOperational
+   * Check if any one of the service is non operational.
    * 
    * @param {Array} services 
    * @returns {Boolean}
@@ -83,7 +83,7 @@ class StatusList extends Component {
   }
 
   /**
-   * Render all services with their respective status
+   * Render all services with their respective status.
    * 
    * @param {Array} services 
    * @returns {Array} 
