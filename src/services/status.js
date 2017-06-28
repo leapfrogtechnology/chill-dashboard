@@ -1,5 +1,6 @@
 import config from '../config';
 import http from '../utils/http';
+import Outage from '../enums/Outage';
 
 const STATUS_UP = 'up';
 const STATUS_DOWN = 'down';
@@ -11,12 +12,6 @@ const ALL_STATUS_DOWN_MESSAGE = 'Major System Outage';
 const ALL_STATUS_UP_MESSAGE = 'All Systems Operational';
 const PARTIAL_STATUS_DOWN_CLASS = 'status-partial-down';
 const PARTIAL_STATUS_DOWN_MESSAGE = 'Partial System Outage';
-
-const Outage = {
-  NONE: 0,
-  PARTIAL: 1,
-  ALL: 2
-};
 
 /**
  * Get the latest status of the services.
