@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Panel = ({ title, children, titleClass = 'status-up' }) => (
+const Panel = ({ title, children, className = 'status-up' }) => (
   <div className="panel panel-default">
-    <div className={`panel-heading ${titleClass}`}>
+    <div className={`panel-heading ${className}`}>
       <h3 className="panel-title">{title}</h3>
     </div>
     {children}
@@ -13,7 +13,7 @@ const Panel = ({ title, children, titleClass = 'status-up' }) => (
 Panel.propTypes = {
   title: PropTypes.string,
   children: PropTypes.element,
-  titleClass: PropTypes.string
+  className: PropTypes.string
 };
 
 export default Panel;

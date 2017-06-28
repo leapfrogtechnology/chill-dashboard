@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 
 import {
-  isUp,
-  STATUS_UP_CLASS,
-  STATUS_DOWN_CLASS,
-  STATUS_DOWN_MESSAGE,
+  isOperational,
+  getRenderParams,
   fetchServiceStatuses
 } from '../../services/status';
 
@@ -16,8 +14,7 @@ class StatusPanel extends Component {
   constructor() {
     super();
     this.state = {
-      services: [],
-      isOperational: true
+      services: []
     };
   }
 
@@ -38,52 +35,15 @@ class StatusPanel extends Component {
 
       this.setState({
         services,
-        isLoading: false,
-        isOperational: this.isOperational(services)
+        isLoading: false
       });
     } catch (err) {
       // TODO: Show error messages
     }
   }
 
-  /**
-   * Check if any one of the service is non operational.
-   * 
-   * @param {Array} services 
-   * @returns {Boolean}
-   */
-  isOperational(services) {
-    for (let service of services) {
-      if (!isUp(service)) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-
-  /**
-   * Get required parameters to render the status panel.
-   * 
-   * @param {Boolean} isOperational 
-   * @returns {Object} {message, titleClass}
-   */
-  getParams(isOperational) {
-    if (!isOperational) {
-      return {
-        message: STATUS_DOWN_MESSAGE,
-        titleClass: STATUS_DOWN_CLASS
-      };
-    }
-
-    return {
-      titleClass: STATUS_UP_CLASS,
-      message: 'All Systems Operational'
-    };
-  }
-
   render() {
-    let { titleClass, message } = this.getParams(this.state.isOperational);
+    let { className, message } = getRenderParams(isOperational(this.state.services), true);
 
     if (this.state.isLoading) {
       return (
@@ -92,17 +52,11 @@ class StatusPanel extends Component {
     }
 
     return (
-      <Panel
-        title={message}
-        titleClass={titleClass}
-      >
-        <ServiceList
-          services={this.state.services}
-        />
+      <Panel title={message} className={className}>
+        <ServiceList services={this.state.services} />
       </Panel >
     );
   }
 }
 
 export default StatusPanel;
-
