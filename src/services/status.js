@@ -1,8 +1,10 @@
+import { sprintf } from 'sprintf-js';
+
 import config from '../config';
 import http from '../utils/http';
-import Outage from '../enums/Outage';
 
-import statusConstants from '../constants/statusConstants';
+import * as outage from '../enums/outage';
+import * as statusConstants from '../constants/statusConstants';
 
 /**
  * Get the latest status of the services.
@@ -27,33 +29,38 @@ export function isUp(service) {
 }
 
 /**
- * Get the total counts of the services using their statuses.
+ * Get the total counts of the status of services.
  *
  * @param {Array} services
  * @returns {Object}
  */
-export function getServiceCountsByStatus(services) {
-  let totalRunning = services.filter(isUp).length;
-  let totalStopped = services.length - totalRunning;
+export function getServiceCounts(services) {
+  let total = services.length;
+  let totalUp = services.filter(isUp).length;
+  let totalDown = total - totalUp;
 
-  return { totalRunning, totalStopped };
+  return {
+    total,
+    totalUp,
+    totalDown
+  };
 }
 
 /**
  * Check outage status.
  * 
  * @param {Array} services 
- * @returns {Outage}
+ * @returns {Number} outage
  */
-export function getSystemStatus(services) {
+export function getOutageLevel(services) {
   if (services.every(service => isUp(service))) {
-    return Outage.NONE;
+    return outage.NONE;
   }
   if (services.every(service => !isUp(service))) {
-    return Outage.ALL;
+    return outage.ALL;
   }
 
-  return Outage.PARTIAL;
+  return outage.PARTIAL;
 }
 
 /**
@@ -79,24 +86,27 @@ export function getServiceParams(isOperational) {
 /**
  * Get required parameters to render the status panel.
  * 
- * @param {Outage} outage 
+ * @param {Array} services 
  * @returns {Object} {message, className}
  */
-export function getOutageParams(outage) {
-  switch (outage) {
-    case Outage.NONE:
+export function getOutageParams(services) {
+  let outageLevel = getOutageLevel(services);
+  let { total, totalUp } = getServiceCounts(services);
+
+  switch (outageLevel) {
+    case outage.NONE:
       return {
         className: statusConstants.STATUS_UP_CLASS,
         message: statusConstants.ALL_STATUS_UP_MESSAGE
       };
 
-    case Outage.PARTIAL:
+    case outage.PARTIAL:
       return {
         className: statusConstants.PARTIAL_STATUS_DOWN_CLASS,
-        message: statusConstants.PARTIAL_STATUS_DOWN_MESSAGE
+        message: sprintf(statusConstants.PARTIAL_STATUS_DOWN_MESSAGE, { totalUp, total })
       };
 
-    case Outage.ALL:
+    case outage.ALL:
       return {
         className: statusConstants.STATUS_DOWN_CLASS,
         message: statusConstants.ALL_STATUS_DOWN_MESSAGE

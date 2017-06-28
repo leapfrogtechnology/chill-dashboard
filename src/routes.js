@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import config from './config';
-import routeConstants from './constants/routeConstants';
+import * as routeConstants from './constants/routeConstants';
 
 import Dashboard from './components/Dashboard';
 import Header from './components/commons/Header';

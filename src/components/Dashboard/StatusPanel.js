@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import {
-  getSystemStatus,
   getOutageParams,
   fetchServiceStatuses
 } from '../../services/status';
@@ -43,7 +42,7 @@ class StatusPanel extends Component {
   }
 
   render() {
-    let { className, message } = getOutageParams(getSystemStatus(this.state.services));
+    let { className, message } = getOutageParams(this.state.services);
 
     if (this.state.isLoading) {
       return (

@@ -1,7 +1,3 @@
-const Outage = {
-  NONE: 0,
-  PARTIAL: 1,
-  ALL: 2
-};
-
-export default Outage;
+export const NONE = 0;
+export const PARTIAL = 1;
+export const ALL = 2;
