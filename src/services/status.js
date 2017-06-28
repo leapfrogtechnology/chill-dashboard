@@ -2,16 +2,7 @@ import config from '../config';
 import http from '../utils/http';
 import Outage from '../enums/Outage';
 
-const STATUS_UP = 'up';
-const STATUS_DOWN = 'down';
-const STATUS_UP_CLASS = 'status-up';
-const STATUS_DOWN_CLASS = 'status-down';
-const STATUS_UP_MESSAGE = 'Operational';
-const STATUS_DOWN_MESSAGE = 'Major Outage';
-const ALL_STATUS_DOWN_MESSAGE = 'Major System Outage';
-const ALL_STATUS_UP_MESSAGE = 'All Systems Operational';
-const PARTIAL_STATUS_DOWN_CLASS = 'status-partial-down';
-const PARTIAL_STATUS_DOWN_MESSAGE = 'Partial System Outage';
+import statusConstants from '../constants/statusConstants';
 
 /**
  * Get the latest status of the services.
@@ -32,7 +23,7 @@ export async function fetchServiceStatuses() {
  * @returns {Boolean}
  */
 export function isUp(service) {
-  return service.status === STATUS_UP;
+  return service.status === statusConstants.STATUS_UP;
 }
 
 /**
@@ -74,14 +65,14 @@ export function getSystemStatus(services) {
 export function getServiceParams(isOperational) {
   if (!isOperational) {
     return {
-      className: STATUS_DOWN_CLASS,
-      message: STATUS_DOWN_MESSAGE
+      className: statusConstants.STATUS_DOWN_CLASS,
+      message: statusConstants.STATUS_DOWN_MESSAGE
     };
   }
 
   return {
-    className: STATUS_UP_CLASS,
-    message: STATUS_UP_MESSAGE
+    className: statusConstants.STATUS_UP_CLASS,
+    message: statusConstants.STATUS_UP_MESSAGE
   };
 }
 
@@ -89,25 +80,26 @@ export function getServiceParams(isOperational) {
  * Get required parameters to render the status panel.
  * 
  * @param {Outage} outage 
+ * @returns {Object} {message, className}
  */
 export function getOutageParams(outage) {
   switch (outage) {
     case Outage.NONE:
       return {
-        className: STATUS_UP_CLASS,
-        message: ALL_STATUS_UP_MESSAGE
+        className: statusConstants.STATUS_UP_CLASS,
+        message: statusConstants.ALL_STATUS_UP_MESSAGE
       };
 
     case Outage.PARTIAL:
       return {
-        className: PARTIAL_STATUS_DOWN_CLASS,
-        message: PARTIAL_STATUS_DOWN_MESSAGE
+        className: statusConstants.PARTIAL_STATUS_DOWN_CLASS,
+        message: statusConstants.PARTIAL_STATUS_DOWN_MESSAGE
       };
 
     case Outage.ALL:
       return {
-        className: STATUS_DOWN_CLASS,
-        message: ALL_STATUS_DOWN_MESSAGE
+        className: statusConstants.STATUS_DOWN_CLASS,
+        message: statusConstants.ALL_STATUS_DOWN_MESSAGE
       };
   }
 }
