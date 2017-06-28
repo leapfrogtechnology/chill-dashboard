@@ -40,7 +40,7 @@ export function getServiceCountsByStatus(services) {
 }
 
 /**
- * Check if any of the service is non operational.
+ * Check outage status.
  * 
  * @param {Array} services 
  * @returns {Outage}
