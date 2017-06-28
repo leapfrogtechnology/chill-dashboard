@@ -56,6 +56,13 @@ a:hover {
   font-weight: 200;
 }
 
+.list-item-tooltip {
+  float:right;
+  color: #333;
+  margin: 0 10px;
+  line-height: 42px;
+}
+
 .list-group-item .status-up {
   color: #19be10;
   background: #fff;
