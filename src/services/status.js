@@ -9,12 +9,19 @@ const STATUS_UP_MESSAGE = 'Operational';
 const STATUS_DOWN_MESSAGE = 'Major Outage';
 const ALL_STATUS_DOWN_MESSAGE = 'Major System Outage';
 const ALL_STATUS_UP_MESSAGE = 'All Systems Operational';
+const PARTIAL_STATUS_DOWN_CLASS = 'status-partial-down';
+const PARTIAL_STATUS_DOWN_MESSAGE = 'Partial System Outage';
+
+const Outage = {
+  NONE: 0,
+  PARTIAL: 1,
+  ALL: 2
+};
 
 /**
  * Get the latest status of the services.
  *
- * @export
- * @returns
+ * @returns {Promise}
  */
 export async function fetchServiceStatuses() {
   const { endpoints } = config.api;
@@ -50,35 +57,62 @@ export function getServiceCountsByStatus(services) {
  * Check if any of the service is non operational.
  * 
  * @param {Array} services 
- * @returns {Boolean}
+ * @returns {Outage}
  */
-export function isOperational(services) {
-  for (let service of services) {
-    if (!isUp(service)) {
-      return false;
-    }
+export function getSystemStatus(services) {
+  if (services.every(service => isUp(service))) {
+    return Outage.NONE;
+  }
+  if (services.every(service => !isUp(service))) {
+    return Outage.ALL;
   }
 
-  return true;
+  return Outage.PARTIAL;
 }
 
 /**
- * Get required parameters to render the status panel.
+ * Get required parameters to render services.
  * 
  * @param {Boolean} isOperational 
- * @param {Boolean} hasFullMessage
  * @returns {Object} {message, className}
  */
-export function getRenderParams(isOperational, hasFullMessage = false) {
+export function getServiceParams(isOperational) {
   if (!isOperational) {
     return {
       className: STATUS_DOWN_CLASS,
-      message: hasFullMessage ? ALL_STATUS_DOWN_MESSAGE : STATUS_DOWN_MESSAGE
+      message: STATUS_DOWN_MESSAGE
     };
   }
 
   return {
     className: STATUS_UP_CLASS,
-    message: hasFullMessage ? ALL_STATUS_UP_MESSAGE : STATUS_UP_MESSAGE
+    message: STATUS_UP_MESSAGE
   };
+}
+
+/**
+ * Get required parameters to render the status panel.
+ * 
+ * @param {Outage} outage 
+ */
+export function getOutageParams(outage) {
+  switch (outage) {
+    case Outage.NONE:
+      return {
+        className: STATUS_UP_CLASS,
+        message: ALL_STATUS_UP_MESSAGE
+      };
+
+    case Outage.PARTIAL:
+      return {
+        className: PARTIAL_STATUS_DOWN_CLASS,
+        message: PARTIAL_STATUS_DOWN_MESSAGE
+      };
+
+    case Outage.ALL:
+      return {
+        className: STATUS_DOWN_CLASS,
+        message: ALL_STATUS_DOWN_MESSAGE
+      };
+  }
 }

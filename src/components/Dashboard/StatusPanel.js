@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import {
-  isOperational,
-  getRenderParams,
+  getSystemStatus,
+  getOutageParams,
   fetchServiceStatuses
 } from '../../services/status';
 
@@ -43,7 +43,7 @@ class StatusPanel extends Component {
   }
 
   render() {
-    let { className, message } = getRenderParams(isOperational(this.state.services), true);
+    let { className, message } = getOutageParams(getSystemStatus(this.state.services));
 
     if (this.state.isLoading) {
       return (

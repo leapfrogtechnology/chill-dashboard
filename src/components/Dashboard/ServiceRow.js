@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { isUp, getRenderParams } from '../../services/status';
+import { isUp, getServiceParams } from '../../services/status';
 
 const ServiceRow = ({ service }) => {
-  let { message, className } = getRenderParams(isUp(service));
+  let { message, className } = getServiceParams(isUp(service));
 
   return (
     <li className="list-group-item">
