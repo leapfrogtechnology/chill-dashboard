@@ -27,7 +27,7 @@ a:hover {
 }
 
 .panel-default .status-down {
-  background-color: #d7573e;
+  background-color: #e74c3c;
 }
 
 .panel-heading { 
@@ -58,7 +58,7 @@ a:hover {
 }
 
 .list-group-item .status-down {
-  color: #d7573e;
+  color: #e74c3c;
   background: #fff;  
 }
 
