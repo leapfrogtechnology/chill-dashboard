@@ -30,6 +30,10 @@ a:hover {
   background-color: #e74c3c;
 }
 
+.panel-default .status-partial-down {
+  background-color: #e67e22;
+}
+
 .panel-heading { 
   height: 53px;
 }
