@@ -1,14 +1,10 @@
-const statusConstants = {
-  STATUS_UP: 'up',
-  STATUS_DOWN: 'down',
-  STATUS_UP_CLASS: 'status-up',
-  STATUS_DOWN_CLASS: 'status-down',
-  STATUS_UP_MESSAGE: 'Operational',
-  STATUS_DOWN_MESSAGE: 'Major Outage',
-  ALL_STATUS_DOWN_MESSAGE: 'Major System Outage',
-  ALL_STATUS_UP_MESSAGE: 'All Systems Operational',
-  PARTIAL_STATUS_DOWN_CLASS: 'status-partial-down',
-  PARTIAL_STATUS_DOWN_MESSAGE: 'Partial System Outage'
-};
-
-export default statusConstants;
+export const STATUS_UP = 'up';
+export const STATUS_DOWN = 'down';
+export const STATUS_UP_CLASS = 'status-up';
+export const STATUS_DOWN_CLASS = 'status-down';
+export const STATUS_UP_MESSAGE = 'Operational';
+export const STATUS_DOWN_MESSAGE = 'Major Outage';
+export const ALL_STATUS_DOWN_MESSAGE = 'Major System Outage';
+export const ALL_STATUS_UP_MESSAGE = 'All Systems Operational';
+export const PARTIAL_STATUS_DOWN_CLASS = 'status-partial-down';
+export const PARTIAL_STATUS_DOWN_MESSAGE = 'Partial System Outage';

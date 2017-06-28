@@ -1,5 +1,1 @@
-const routeConstants = {
-  DASHBOARD: '/'
-};
-
-export default routeConstants;
+export const DASHBOARD = '/';

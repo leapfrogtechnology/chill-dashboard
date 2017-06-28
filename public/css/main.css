@@ -74,12 +74,12 @@ a:hover {
 }
 
 .page-footer {  
-    padding: 10px 0;
-    overflow: hidden;
-    margin-top: 70px;    
-    border-top: 1px solid #E0E0E0;;
+  padding: 10px 0;
+  overflow: hidden;
+  margin-top: 70px;    
+  border-top: 1px solid #E0E0E0;;
 }
 
 .footer-text {
-    color: #7B8994;
+  color: #7B8994;
 }
