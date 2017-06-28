@@ -4,6 +4,7 @@ import config from '../config';
 import http from '../utils/http';
 
 import * as outage from '../enums/outage';
+import * as iconConstants from '../constants/iconConstants';
 import * as statusConstants from '../constants/statusConstants';
 
 /**
@@ -67,17 +68,19 @@ export function getOutageLevel(services) {
  * Get required parameters to render services.
  * 
  * @param {Boolean} isOperational 
- * @returns {Object} {message, className}
+ * @returns {Object} {icon, message, className}
  */
 export function getServiceParams(isOperational) {
   if (!isOperational) {
     return {
+      icon: iconConstants.EXCLAMATION,
       className: statusConstants.STATUS_DOWN_CLASS,
       message: statusConstants.STATUS_DOWN_MESSAGE
     };
   }
 
   return {
+    icon: iconConstants.INFO,
     className: statusConstants.STATUS_UP_CLASS,
     message: statusConstants.STATUS_UP_MESSAGE
   };

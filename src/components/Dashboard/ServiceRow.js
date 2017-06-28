@@ -7,7 +7,7 @@ import { isUp, getServiceParams } from '../../services/status';
 
 const ServiceRow = ({ service }) => {
   let { id, name, createdAt } = service;
-  let { message, className } = getServiceParams(isUp(service));
+  let { message, className, icon } = getServiceParams(isUp(service));
 
   let tooltipId = `tooltip-${id}`;
 
@@ -19,7 +19,7 @@ const ServiceRow = ({ service }) => {
         data-tip
         aria-hidden="true"
         data-for={tooltipId}
-        className="list-item-tooltip glyphicon glyphicon-info-sign"
+        className={`list-item-tooltip ${icon} ${className}`}
       />
 
       <ToolTip className="tooltip" place="left" id={tooltipId} type="dark">
