@@ -1,14 +1,16 @@
+import { sprintf } from 'sprintf-js';
+
 import config from '../config';
 import http from '../utils/http';
 
-export const STATUS_UP = 'up';
-export const STATUS_DOWN = 'down';
+import * as outage from '../enums/outage';
+import * as iconConstants from '../constants/iconConstants';
+import * as statusConstants from '../constants/statusConstants';
 
 /**
  * Get the latest status of the services.
  *
- * @export
- * @returns
+ * @returns {Promise}
  */
 export async function fetchServiceStatuses() {
   const { endpoints } = config.api;
@@ -24,18 +26,93 @@ export async function fetchServiceStatuses() {
  * @returns {Boolean}
  */
 export function isUp(service) {
-  return service.status === STATUS_UP;
+  return service.status === statusConstants.STATUS_UP;
 }
 
 /**
- * Get the total counts of the services using their statuses.
+ * Get the total counts of the status of services.
  *
  * @param {Array} services
  * @returns {Object}
  */
-export function getServiceCountsByStatus(services) {
-  let totalRunning = services.filter(isUp).length;
-  let totalStopped = services.length - totalRunning;
+export function getServiceCounts(services) {
+  let total = services.length;
+  let totalUp = services.filter(isUp).length;
+  let totalDown = total - totalUp;
 
-  return { totalRunning, totalStopped };
+  return {
+    total,
+    totalUp,
+    totalDown
+  };
+}
+
+/**
+ * Check outage status.
+ * 
+ * @param {Array} services 
+ * @returns {Number} outage
+ */
+export function getOutageLevel(services) {
+  if (services.every(service => isUp(service))) {
+    return outage.NONE;
+  }
+  if (services.every(service => !isUp(service))) {
+    return outage.ALL;
+  }
+
+  return outage.PARTIAL;
+}
+
+/**
+ * Get required parameters to render services.
+ * 
+ * @param {Boolean} isOperational 
+ * @returns {Object} {icon, message, className}
+ */
+export function getServiceParams(isOperational) {
+  if (!isOperational) {
+    return {
+      icon: iconConstants.EXCLAMATION,
+      className: statusConstants.STATUS_DOWN_CLASS,
+      message: statusConstants.STATUS_DOWN_MESSAGE
+    };
+  }
+
+  return {
+    icon: iconConstants.INFO,
+    className: statusConstants.STATUS_UP_CLASS,
+    message: statusConstants.STATUS_UP_MESSAGE
+  };
+}
+
+/**
+ * Get required parameters to render the status panel.
+ * 
+ * @param {Array} services 
+ * @returns {Object} {message, className}
+ */
+export function getOutageParams(services) {
+  let outageLevel = getOutageLevel(services);
+  let { total, totalUp } = getServiceCounts(services);
+
+  switch (outageLevel) {
+    case outage.NONE:
+      return {
+        className: statusConstants.STATUS_UP_CLASS,
+        message: statusConstants.ALL_STATUS_UP_MESSAGE
+      };
+
+    case outage.PARTIAL:
+      return {
+        className: statusConstants.PARTIAL_STATUS_DOWN_CLASS,
+        message: sprintf(statusConstants.PARTIAL_STATUS_DOWN_MESSAGE, { totalUp, total })
+      };
+
+    case outage.ALL:
+      return {
+        className: statusConstants.STATUS_DOWN_CLASS,
+        message: statusConstants.ALL_STATUS_DOWN_MESSAGE
+      };
+  }
 }
