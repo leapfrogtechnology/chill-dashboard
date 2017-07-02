@@ -42,7 +42,7 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        use: 'file-loader?name=[name].[ext]&publicPath=/images/&outputPath=/images/'
+        use: 'file-loader'
       },
       {
         test: /\.ico$/,
@@ -66,8 +66,10 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.APP_LOGO': JSON.stringify(process.env.APP_LOGO),
       'process.env.APP_LOGO_HEIGHT': JSON.stringify(process.env.APP_LOGO_HEIGHT),
+      'process.env.APP_TITLE': JSON.stringify(process.env.APP_TITLE),
       'process.env.NODE_ENV': JSON.stringify('development'),
-      'process.env.API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT)
+      'process.env.API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT),
+      'process.env.WEBSOCKET_ENDPOINT': JSON.stringify(process.env.WEBSOCKET_ENDPOINT)
     }),
     new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
     new webpack.NoEmitOnErrorsPlugin(), // do not emit compiled assets that include errors

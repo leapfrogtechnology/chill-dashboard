@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 
+import _ from 'lodash';
+
 import {
   getOutageParams,
   fetchServiceStatuses
 } from '../../services/status';
+import initializeWebSocket from '../../services/websocket';
 
 import Panel from '../commons/Panel';
 import ServiceList from './ServiceList';
@@ -15,15 +18,31 @@ class StatusPanel extends Component {
     this.state = {
       services: []
     };
+
+    this.onStatusChange = this.onStatusChange.bind(this);
   }
 
   async componentDidMount() {
     this.fetchStatuses();
+    initializeWebSocket(this.onStatusChange);
   }
 
   /**
-   * Fetch list of services. 
-   * 
+   * Implementation of real time status change
+   *
+   * @param service
+   */
+  onStatusChange(service) {
+    let services = this.state.services;
+    let index = _.findIndex(services, ['name', service.name]);
+
+    _.merge(services[index], service);
+    this.setState({ services });
+  }
+
+  /**
+   * Fetch list of services.
+   *
    * @returns {Promise}
    */
   async fetchStatuses() {
@@ -52,7 +71,7 @@ class StatusPanel extends Component {
 
     return (
       <Panel title={message} className={className}>
-        <ServiceList services={this.state.services} />
+      <ServiceList services={this.state.services} />
       </Panel >
     );
   }
