@@ -6,7 +6,7 @@ import {
   getOutageParams,
   fetchServiceStatuses
 } from '../../services/status';
-import initializeWebSocket from '../../services/websocket';
+import * as websocket from '../../services/websocket';
 
 import Panel from '../commons/Panel';
 import ServiceList from './ServiceList';
@@ -18,13 +18,13 @@ class StatusPanel extends Component {
     this.state = {
       services: []
     };
-
-    this.onStatusChange = this.onStatusChange.bind(this);
   }
 
   async componentDidMount() {
     this.fetchStatuses();
-    initializeWebSocket(this.onStatusChange);
+    websocket.initialize({
+      onMessage: (e, data) => this.onStatusChange(e, data)
+    });
   }
 
   /**
@@ -32,7 +32,7 @@ class StatusPanel extends Component {
    *
    * @param service
    */
-  onStatusChange(service) {
+  onStatusChange(e, service) {
     let services = this.state.services;
     let index = _.findIndex(services, ['name', service.name]);
 
@@ -71,7 +71,7 @@ class StatusPanel extends Component {
 
     return (
       <Panel title={message} className={className}>
-        <ServiceList services={this.state.services}/>
+        <ServiceList services={this.state.services} />
       </Panel >
     );
   }

@@ -2,30 +2,55 @@ import config from '../config';
 
 const CONNECTION_ESTABLISHED_EVENT = 'ws-connection-establish';
 
-let ws = new WebSocket(config.api.websocketEndpoint);
+let ws;
+let handlers = {};
 
-export default function initializeWebSocket(onMessage) {
-  connectWebSocket(onMessage);
+/**
+ * Initialize Websocket client.
+ *
+ * @param {Object} handlers
+ */
+export function initialize(handlers) {
+  if (!ws) {
+    connect(handlers);
+  }
 }
 
 /**
- * Connect to the websocket endpoint
+ * Connect to the websocket endpoint.
  *
- * @param onMessage
+ * @param {Object} handlers
  */
-function connectWebSocket(onMessage) {
-  ws.onclose = function () {
-    setTimeout(() => {
-      connectWebSocket(onMessage);
-    }, 5000);
-  };
+function connect(eventHandlers) {
+  ws = new WebSocket(config.websocket.endpoint);
+  handlers = eventHandlers || {};
 
-  ws.onmessage = function (event) {
-    let message = JSON.parse(event.data);
-
-    // Do not call callback function for connection established event
-    if (message.event !== CONNECTION_ESTABLISHED_EVENT) {
-      onMessage(message);
-    }
-  };
+  ws.onclose = handleClose;
+  ws.onmessage = handleMessage;
 }
+
+/**
+ * Handle websocket incomming message.
+ *
+ * @param {Object} e
+ */
+function handleMessage(e) {
+  let data = JSON.parse(e.data);
+
+  // Do not call callback function for connection established event
+  if (data.event !== CONNECTION_ESTABLISHED_EVENT) {
+    handlers.onMessage(e, data);
+  }
+}
+
+/**
+ * Handle websocket connection closed.
+ *
+ * @param {Object} e
+ */
+function handleClose() {
+  setTimeout(() => {
+    connect(handlers);
+  }, config.websocket.reconnectTimeout);
+}
+
