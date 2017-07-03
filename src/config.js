@@ -1,6 +1,6 @@
 export default {
   app: {
-    title: process.env.APP_TITLE || 'Chill dashboard',
+    title: process.env.APP_TITLE || 'Chill Dashboard',
     logoUrl: process.env.APP_LOGO || require('../public/images/chill.png'),
     logoHeight: process.env.APP_LOGO_HEIGHT || '80px'
   },

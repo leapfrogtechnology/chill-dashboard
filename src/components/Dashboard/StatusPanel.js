@@ -1,6 +1,5 @@
+import { update } from 'ramda';
 import React, { Component } from 'react';
-
-import _ from 'lodash';
 
 import {
   getOutageParams,
@@ -23,7 +22,7 @@ class StatusPanel extends Component {
   async componentDidMount() {
     this.fetchStatuses();
     websocket.initialize({
-      onMessage: (e, data) => this.onStatusChange(e, data)
+      onMessage: (e, data) => this.handleStatusChange(e, data)
     });
   }
 
@@ -32,12 +31,13 @@ class StatusPanel extends Component {
    *
    * @param service
    */
-  onStatusChange(e, service) {
-    let services = this.state.services;
-    let index = _.findIndex(services, ['name', service.name]);
+  handleStatusChange(e, data) {
+    let { services } = this.state;
+    let index = services.findIndex(item => item.name === data.name);
+    // Updates the only the updated service data in the services list (Immutable).
+    let updatedServices = update(index, Object.assign({}, services[index], data), services);
 
-    _.merge(services[index], service);
-    this.setState({ services });
+    this.setState({ services: updatedServices });
   }
 
   /**
