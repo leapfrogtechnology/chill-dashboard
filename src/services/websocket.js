@@ -6,7 +6,7 @@ let ws;
 let handlers = {};
 
 /**
- * Initialize Websocket client.
+ * Initialize websocket client.
  *
  * @param {Object} handlers
  */
@@ -19,7 +19,7 @@ export function initialize(handlers) {
 /**
  * Connect to the websocket endpoint.
  *
- * @param {Object} handlers
+ * @param {Object} eventHandlers
  */
 function connect(eventHandlers) {
   ws = new WebSocket(config.websocket.endpoint);
@@ -30,7 +30,7 @@ function connect(eventHandlers) {
 }
 
 /**
- * Handle websocket incomming message.
+ * Handle websocket incoming message.
  *
  * @param {Object} e
  */
@@ -46,7 +46,6 @@ function handleMessage(e) {
 /**
  * Handle websocket connection closed.
  *
- * @param {Object} e
  */
 function handleClose() {
   setTimeout(() => {
