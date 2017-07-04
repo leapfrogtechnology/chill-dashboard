@@ -53,10 +53,12 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html')
     }),
     new webpack.DefinePlugin({
-      'process.env.APP_LOGO': JSON.stringify(process.env.APP_LOGO),
-      'process.env.APP_LOGO_HEIGHT': JSON.stringify(process.env.APP_LOGO_HEIGHT),
       'process.env.NODE_ENV': JSON.stringify('production'),
-      'process.env.API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT)
+      'process.env.APP_LOGO': JSON.stringify(process.env.APP_LOGO),
+      'process.env.APP_TITLE': JSON.stringify(process.env.APP_TITLE),
+      'process.env.API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT),
+      'process.env.APP_LOGO_HEIGHT': JSON.stringify(process.env.APP_LOGO_HEIGHT),
+      'process.env.WEBSOCKET_ENDPOINT': JSON.stringify(process.env.WEBSOCKET_ENDPOINT)
     }),
     new webpack.optimize.UglifyJsPlugin()
   ]
