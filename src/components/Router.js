@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import config from './config';
-import * as routeConstants from './constants/routeConstants';
+import config from '../config';
+import * as routeConstants from '../constants/routeConstants';
 
-import Header from './components/commons/Header';
-import Footer from './components/commons/Footer';
-import Dashboard from './components/dashboard/Dashboard';
+import Header from './commons/Header';
+import Footer from './commons/Footer';
+import Dashboard from './dashboard/Dashboard';
 
 const { logoUrl, logoHeight, baseHref } = config.app;
 
