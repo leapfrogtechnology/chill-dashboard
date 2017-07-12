@@ -1,43 +1,21 @@
-import { update } from 'ramda';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import {
-  getOutageParams,
-  fetchServiceStatuses
-} from '../../services/status';
+import { withStatusInfo } from '../hoc/status';
+
 import * as websocket from '../../services/websocket';
+import * as statusService from '../../services/status';
 
 import Panel from '../commons/Panel';
 import ServiceList from './ServiceList';
 import Spinner from '../commons/Spinner';
 
 class StatusPanel extends Component {
-  constructor() {
-    super();
-    this.state = {
-      services: []
-    };
-  }
+  componentDidMount() {
+    const { handleWebSocketNotification } = this.props;
 
-  async componentDidMount() {
     this.fetchStatuses();
-    websocket.initialize({
-      onMessage: (e, data) => this.handleStatusChange(e, data)
-    });
-  }
-
-  /**
-   * Implementation of real time status change
-   *
-   * @param service
-   */
-  handleStatusChange(e, data) {
-    let { services } = this.state;
-    let index = services.findIndex(item => item.name === data.name);
-    // Updates the only the updated service data in the services list (Immutable).
-    let updatedServices = update(index, Object.assign({}, services[index], data), services);
-
-    this.setState({ services: updatedServices });
+    websocket.initialize({ onMessage: handleWebSocketNotification });
   }
 
   /**
@@ -46,24 +24,24 @@ class StatusPanel extends Component {
    * @returns {Promise}
    */
   async fetchStatuses() {
-    this.setState({ isLoading: true });
+    const { updateStatus } = this.props;
+
+    updateStatus({ isLoading: true, services: [] });
 
     try {
-      let services = await fetchServiceStatuses();
+      let services = await statusService.fetchServiceStatuses();
 
-      this.setState({
-        services,
-        isLoading: false
-      });
+      updateStatus({ services, isLoading: false });
     } catch (err) {
       // TODO: Show error messages
     }
   }
 
   render() {
-    let { className, message } = getOutageParams(this.state.services);
+    let { isLoading, services } = this.props.status;
+    let { className, message } = statusService.getOutageParams(services);
 
-    if (this.state.isLoading) {
+    if (isLoading) {
       return (
         <Spinner />
       );
@@ -71,10 +49,16 @@ class StatusPanel extends Component {
 
     return (
       <Panel title={message} className={className}>
-        <ServiceList services={this.state.services} />
+        <ServiceList services={services} />
       </Panel >
     );
   }
 }
 
-export default StatusPanel;
+StatusPanel.propTypes = {
+  status: PropTypes.object,
+  updateStatus: PropTypes.func,
+  handleWebSocketNotification: PropTypes.func
+};
+
+export default withStatusInfo(StatusPanel);
