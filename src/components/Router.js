@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import config from '../config';
-import * as routeConstants from '../constants/routeConstants';
+import * as routes from '../constants/routes';
 
 import Header from './commons/Header';
 import Footer from './commons/Footer';
@@ -15,7 +15,7 @@ const Router = () => (
     <div>
       <Header logoUrl={logoUrl} style={{ height: logoHeight }} />
       <Switch>
-        <Route exact path={routeConstants.DASHBOARD} component={Dashboard} />
+        <Route exact path={routes.DASHBOARD} component={Dashboard} />
       </Switch>
       <Footer />
     </div>

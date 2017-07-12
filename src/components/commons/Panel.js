@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { STATUS_UP } from '../../constants/statusConstants';
+import { STATUS_UP } from '../../constants/statuses';
 
 const Panel = ({ title, children, className = STATUS_UP }) => (
   <div className="panel panel-default">
