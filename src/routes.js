@@ -8,9 +8,7 @@ import Header from './components/commons/Header';
 import Footer from './components/commons/Footer';
 import Dashboard from './components/dashboard/Dashboard';
 
-const baseHref = process.env.BASE_HREF || '/';
-
-const { logoUrl, logoHeight } = config.app;
+const { logoUrl, logoHeight, baseHref } = config.app;
 
 const Router = () => (
   <BrowserRouter basename={baseHref}>
