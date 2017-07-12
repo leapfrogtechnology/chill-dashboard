@@ -6,7 +6,7 @@ import * as routes from '../constants/routes';
 
 import Header from './commons/Header';
 import Footer from './commons/Footer';
-import Dashboard from './dashboard/Dashboard';
+import StatusPage from './dashboard/StatusPage';
 
 const { logoUrl, logoHeight, baseHref } = config.app;
 
@@ -15,7 +15,7 @@ const Router = () => (
     <div>
       <Header logoUrl={logoUrl} style={{ height: logoHeight }} />
       <Switch>
-        <Route exact path={routes.DASHBOARD} component={Dashboard} />
+        <Route exact path={routes.HOME} component={StatusPage} />
       </Switch>
       <Footer />
     </div>
