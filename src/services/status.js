@@ -3,9 +3,9 @@ import { sprintf } from 'sprintf-js';
 import config from '../config';
 import http from '../utils/http';
 
-import * as outage from '../enums/outage';
-import * as iconConstants from '../constants/iconConstants';
-import * as statusConstants from '../constants/statusConstants';
+import * as icons from '../constants/icons';
+import * as statuses from '../constants/statuses';
+import * as outage from '../constants/enums/outage';
 
 /**
  * Get the latest status of the services.
@@ -26,7 +26,7 @@ export async function fetchServiceStatuses() {
  * @returns {Boolean}
  */
 export function isUp(service) {
-  return service.status === statusConstants.STATUS_UP;
+  return service.status === statuses.STATUS_UP;
 }
 
 /**
@@ -49,8 +49,8 @@ export function getServiceCounts(services) {
 
 /**
  * Check outage status.
- * 
- * @param {Array} services 
+ *
+ * @param {Array} services
  * @returns {Number} outage
  */
 export function getOutageLevel(services) {
@@ -66,30 +66,30 @@ export function getOutageLevel(services) {
 
 /**
  * Get required parameters to render services.
- * 
- * @param {Boolean} isOperational 
+ *
+ * @param {Boolean} isOperational
  * @returns {Object} {icon, message, className}
  */
 export function getServiceParams(isOperational) {
   if (!isOperational) {
     return {
-      icon: iconConstants.EXCLAMATION,
-      className: statusConstants.STATUS_DOWN_CLASS,
-      message: statusConstants.STATUS_DOWN_MESSAGE
+      icon: icons.EXCLAMATION,
+      className: statuses.STATUS_DOWN_CLASS,
+      message: statuses.STATUS_DOWN_MESSAGE
     };
   }
 
   return {
-    icon: iconConstants.INFO,
-    className: statusConstants.STATUS_UP_CLASS,
-    message: statusConstants.STATUS_UP_MESSAGE
+    icon: icons.INFO,
+    className: statuses.STATUS_UP_CLASS,
+    message: statuses.STATUS_UP_MESSAGE
   };
 }
 
 /**
  * Get required parameters to render the status panel.
- * 
- * @param {Array} services 
+ *
+ * @param {Array} services
  * @returns {Object} {message, className}
  */
 export function getOutageParams(services) {
@@ -99,20 +99,20 @@ export function getOutageParams(services) {
   switch (outageLevel) {
     case outage.NONE:
       return {
-        className: statusConstants.STATUS_UP_CLASS,
-        message: statusConstants.ALL_STATUS_UP_MESSAGE
+        className: statuses.STATUS_UP_CLASS,
+        message: statuses.ALL_STATUS_UP_MESSAGE
       };
 
     case outage.PARTIAL:
       return {
-        className: statusConstants.PARTIAL_STATUS_DOWN_CLASS,
-        message: sprintf(statusConstants.PARTIAL_STATUS_DOWN_MESSAGE, { totalUp, total })
+        className: statuses.PARTIAL_STATUS_DOWN_CLASS,
+        message: sprintf(statuses.PARTIAL_STATUS_DOWN_MESSAGE, { totalUp, total })
       };
 
     case outage.ALL:
       return {
-        className: statusConstants.STATUS_DOWN_CLASS,
-        message: statusConstants.ALL_STATUS_DOWN_MESSAGE
+        className: statuses.STATUS_DOWN_CLASS,
+        message: statuses.ALL_STATUS_DOWN_MESSAGE
       };
   }
 }

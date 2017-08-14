@@ -5,7 +5,7 @@ const Header = ({ style, logoUrl }) => (
   <nav className="navbar navbar-default navbar-fixed-top navbar-custom">
     <div className="container-fluid">
       <div className="navbar-logo-container">
-        <img style={style} src={logoUrl} alt="application logo" />
+        <img style={style} src={logoUrl} alt="Application Logo" />
       </div>
     </div>
   </nav>
