@@ -25,6 +25,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "bootstrap": "^3.3.7",
+    "chill-core": "https://github.com/leapfrogtechnology/chill-core#master",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "ramda": "^0.24.1",
