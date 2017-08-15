@@ -2,10 +2,13 @@ env:
   es6: true
   node: true
   browser: true
-  
+
 parserOptions:
   ecmaVersion: 2017
   sourceType: module
+
+globals:
+  __INJECTED_CONFIG: true
 
 extends: ['eslint:recommended', 'plugin:react/recommended']
 parser: babel-eslint
