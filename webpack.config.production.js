@@ -21,8 +21,8 @@ async function configureWebpack() {
     output: {
       publicPath: `/`,
       chunkFilename: '[id].js',
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'js/bundle.[chunkhash].js' // the output bundle
+      filename: 'js/bundle.[chunkhash].js', // the output bundle
+      path: path.resolve(__dirname, 'dist')
     },
     module: {
       rules: [

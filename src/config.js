@@ -1,18 +1,18 @@
 export default {
   app: {
     baseHref: __INJECTED_CONFIG.baseHref || '/',
+    logoHeight: __INJECTED_CONFIG.logoHeight || '80px',
     title: __INJECTED_CONFIG.title || 'Chill Dashboard',
-    logoUrl: __INJECTED_CONFIG.logo || require('../public/images/chill.png'),
-    logoHeight: __INJECTED_CONFIG.logoHeight || '80px'
+    logoUrl: __INJECTED_CONFIG.logo || require('../public/images/chill.png')
   },
   api: {
-    baseUrl: __INJECTED_CONFIG.apiBaseUrl || 'http://localhost:8000',
     endpoints: {
       status: '/api/status'
-    }
+    },
+    baseUrl: __INJECTED_CONFIG.apiBaseUrl || 'http://localhost:8000'
   },
   websocket: {
-    endpoint: __INJECTED_CONFIG.websocketBaseUrl || 'ws://localhost:8080',
-    reconnectTimeout: 5000
+    reconnectTimeout: 5000,
+    endpoint: __INJECTED_CONFIG.websocketBaseUrl || 'ws://localhost:8080'
   }
 };
