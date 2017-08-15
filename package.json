@@ -55,7 +55,6 @@
     "compression": "^1.6.2",
     "cors": "^2.8.1",
     "css-loader": "^0.28.0",
-    "dotenv": "^4.0.0",
     "enzyme": "^2.7.1",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^6.10.0",
