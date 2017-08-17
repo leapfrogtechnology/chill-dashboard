@@ -59,13 +59,8 @@ async function configureWebpack() {
         template: path.resolve(__dirname, 'public/index.html')
       }),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('production'),
-        '__INJECTED_CONFIG.logo': JSON.stringify(config.dashboard.logo),
-        '__INJECTED_CONFIG.title': JSON.stringify(config.dashboard.title),
-        '__INJECTED_CONFIG.baseHref': JSON.stringify(config.dashboard.baseHref),
-        '__INJECTED_CONFIG.apiBaseUrl': JSON.stringify(config.dashboard.apiBaseUrl),
-        '__INJECTED_CONFIG.logoHeight': JSON.stringify(config.dashboard.logoHeight),
-        '__INJECTED_CONFIG.websocketBaseUrl': JSON.stringify(config.dashboard.websocketBaseUrl)
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        '__INJECTED_CONFIG.dashboard': JSON.stringify(config.dashboard)
       }),
       new webpack.optimize.UglifyJsPlugin()
     ]

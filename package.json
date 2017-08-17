@@ -24,6 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",
+    "babel-cli": "^6.26.0",
     "bootstrap": "^3.3.7",
     "chill-core": "https://github.com/leapfrogtechnology/chill-core#master",
     "moment": "^2.18.1",
