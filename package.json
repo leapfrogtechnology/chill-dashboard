@@ -3,7 +3,7 @@
   "version": "1.0.0-alpha.1",
   "description": "Chill Dashboard",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "NODE_ENV=development webpack-dev-server",
     "clean": "rimraf dist",
     "build:app": "webpack --config=webpack.config.production.js --progress --colors -p",
     "build": "NODE_ENV=production run-s lint clean build:app",

@@ -71,13 +71,8 @@ async function configureWebpack() {
         template: path.resolve(__dirname, 'public/index.html')
       }),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('development'),
-        '__INJECTED_CONFIG.dashboard': JSON.stringify(config.dashboard),
-        // '__INJECTED_CONFIG.dashboard.title': JSON.stringify(config.dashboard.title),
-        // '__INJECTED_CONFIG.dashboard.baseHref': JSON.stringify(config.dashboard.baseHref),
-        // '__INJECTED_CONFIG.dashboard.apiBaseUrl': JSON.stringify(config.dashboard.apiBaseUrl),
-        // '__INJECTED_CONFIG.dashboard.logoHeight': JSON.stringify(config.dashboard.logoHeight),
-        // '__INJECTED_CONFIG.dashboard.websocketBaseUrl': JSON.stringify(config.dashboard.websocketBaseUrl)
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        '__INJECTED_CONFIG.dashboard': JSON.stringify(config.dashboard)
       }),
       new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
       new webpack.NoEmitOnErrorsPlugin(), // do not emit compiled assets that include errors
