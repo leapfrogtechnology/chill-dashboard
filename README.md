@@ -1,23 +1,27 @@
 # Chill Dashboard
 
-A simple service monitoring tool.
+Dashboard for the chill monitoring tool.
 
 ## Setup
 
 Install dependencies
 ```bash
-# Using npm
-$ npm install
-
-# Or using yarn
+# Using yarn
 $ yarn
 
-cp chill.example.db chill.db
+# Using npm
+$ npm install
 ```
 
-Then start the app
+Then start the app.
+```bash
+$ CHILL_CONFIG=/path/to/chill.yml yarn start
 ```
-$ npm start:dev
+
+## Production Build
+For production build you can run the `build` script.
+```bash
+$ CHILL_CONFIG=/path/to/chill.yml yarn build
 ```
 
 ## License
