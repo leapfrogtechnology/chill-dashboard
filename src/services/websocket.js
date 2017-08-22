@@ -12,7 +12,7 @@ let handlers = {};
  */
 export function initialize(handlers) {
   if (!ws) {
-    connect(handlers);
+    // connect(handlers);
   }
 }
 
@@ -22,11 +22,11 @@ export function initialize(handlers) {
  * @param {Object} eventHandlers
  */
 function connect(eventHandlers) {
-  ws = new WebSocket(config.websocket.endpoint);
-  handlers = eventHandlers || {};
+  // ws = new WebSocket(config.websocket.endpoint);
+  // handlers = eventHandlers || {};
 
-  ws.onclose = handleClose;
-  ws.onmessage = handleMessage;
+  // ws.onclose = handleClose;
+  // ws.onmessage = handleMessage;
 }
 
 /**
@@ -35,12 +35,12 @@ function connect(eventHandlers) {
  * @param {Object} e
  */
 function handleMessage(e) {
-  let data = JSON.parse(e.data);
+  // let data = JSON.parse(e.data);
 
-  // Do not call callback function for connection established event
-  if (data.event !== CONNECTION_ESTABLISHED_EVENT) {
-    handlers.onMessage(e, data);
-  }
+  // // Do not call callback function for connection established event
+  // if (data.event !== CONNECTION_ESTABLISHED_EVENT) {
+  //   handlers.onMessage(e, data);
+  // }
 }
 
 /**
@@ -48,8 +48,8 @@ function handleMessage(e) {
  *
  */
 function handleClose() {
-  setTimeout(() => {
-    connect(handlers);
-  }, config.websocket.reconnectTimeout);
+  // setTimeout(() => {
+  //   connect(handlers);
+  // }, config.websocket.reconnectTimeout);
 }
 

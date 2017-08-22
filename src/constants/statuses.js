@@ -1,5 +1,5 @@
-export const STATUS_UP = 'up';
-export const STATUS_DOWN = 'down';
+export const STATUS_UP = 'Up';
+export const STATUS_DOWN = 'Down';
 export const STATUS_UP_CLASS = 'status-up';
 export const STATUS_DOWN_CLASS = 'status-down';
 export const STATUS_UP_MESSAGE = 'Operational';

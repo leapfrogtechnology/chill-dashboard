@@ -15,12 +15,12 @@ class StatusPanel extends Component {
   constructor() {
     super();
     this.state = {
-      statuses: []
+      repos: []
     }
   }
   componentDidMount() {
     const { handleWebSocketNotification } = this.props;
-    // console.log('I was triggered during render');
+    console.log('I was triggered during render');
     // {this.service.id};
    let cat= this.fetchStatuses();
     websocket.initialize({ onMessage: handleWebSocketNotification });
@@ -46,20 +46,20 @@ class StatusPanel extends Component {
     updateStatus({ isLoading: true, services: [] });
 
     try {
-      let statuses = await statusService.fetchServiceStatuses();
+      let services = await statusService.fetchServiceStatuses();
+      console.log(services[0].status.name);
       this.setState({
-        statuses: statuses
+        repos: services
       })
       updateStatus({ services, isLoading: false });
     } catch (err) {
       // TODO: Show error messages
     }
   }
+
   render() {
-// console.log(this.state.statuses);
-    
-    let { isLoading } = this.props.status;
-    let { className, message } = statusService.getOutageParams(this.state.statuses);
+    let { isLoading, services } = this.props.status;
+    let { className, message } = statusService.getOutageParams(services);
 
     // if (isLoading) {
     //   return (
@@ -68,15 +68,26 @@ class StatusPanel extends Component {
     // }
   
       // console.log(this.state.repos)
-      // console.log(message);
-      // console.log(className);
-      
     return (
+      
       <Panel title={message} className={className}>
-        
-        <div>
-          <ServiceList statuses={this.state.statuses}/>
-        </div>
+{/* 
+
+ 
+         <h1>i am from panel</h1>
+ */}
+         {
+             this.state.repos.length>0 && this.state.repos.map(repo => {
+                return (
+                  <div key={repo.service.id}>
+                    <ServiceList services={repo.service} />
+                  </div>
+                ); 
+              })
+
+            }
+        { /* console.log({this.state.repos});  */}
+
       </Panel >
     );
   }
