@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
+import httpUtil from '../../utils/http';
 import { withStatusInfo } from '../hoc/status';
 
 import * as websocket from '../../services/websocket';
@@ -11,12 +11,21 @@ import ServiceList from './ServiceList';
 import Spinner from '../commons/Spinner';
 
 class StatusPanel extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      statuses: []
+    }
+  }
   componentDidMount() {
     const { handleWebSocketNotification } = this.props;
-
-    this.fetchStatuses();
+   let cat= this.fetchStatuses();
     websocket.initialize({ onMessage: handleWebSocketNotification });
+
   }
+  
+
 
   /**
    * Fetch list of services.
@@ -29,27 +38,32 @@ class StatusPanel extends Component {
     updateStatus({ isLoading: true, services: [] });
 
     try {
-      let services = await statusService.fetchServiceStatuses();
-
+      let statuses = await statusService.fetchServiceStatuses();
+      this.setState({
+        statuses: statuses
+      })
       updateStatus({ services, isLoading: false });
     } catch (err) {
       // TODO: Show error messages
     }
   }
-
   render() {
-    let { isLoading, services } = this.props.status;
-    let { className, message } = statusService.getOutageParams(services);
+    
+    let { isLoading } = this.props.status;
+    let { className, message } = statusService.getOutageParams(this.state.statuses);
 
-    if (isLoading) {
-      return (
-        <Spinner />
-      );
-    }
-
+    // if (isLoading) {
+    //   return (
+    //     <Spinner />
+    //   );
+    // }
+  
+     
     return (
       <Panel title={message} className={className}>
-        <ServiceList services={services} />
+        <div>
+          <ServiceList statuses={this.state.statuses}/>
+        </div>
       </Panel >
     );
   }

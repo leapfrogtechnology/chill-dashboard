@@ -5,12 +5,12 @@ import ToolTip from 'react-tooltip';
 
 import { isUp, getServiceParams } from '../../services/status';
 
-const ServiceRow = ({ service }) => {
-  let { id, name, createdAt } = service;
-  let { message, className, icon } = getServiceParams(isUp(service));
+const ServiceRow = ({ status }) => {
+  let {service, createdAt} = status;
+  let { id, name } = service; 
+  let { message, className, icon } = getServiceParams(isUp(status.status));
 
   let tooltipId = `tooltip-${id}`;
-
   return (
     <li className="list-group-item">
       <span>{name}</span>

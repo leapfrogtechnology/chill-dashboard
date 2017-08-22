@@ -1,18 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import ServiceRow from './ServiceRow';
 
-const ServiceList = ({ services }) => (
+const ServiceList = ({ statuses }) => (
   <ul className="list-group">
     {
-      services.map(service => <ServiceRow service={service} key={service.id} />)
+      statuses.map(status =>{
+        return <ServiceRow status={status} key={status.id} />
+      } )
     }
   </ul>
 );
 
 ServiceList.propTypes = {
-  services: PropTypes.array
+  statuses: PropTypes.array
 };
 
 export default ServiceList;
