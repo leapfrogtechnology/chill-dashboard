@@ -9,8 +9,6 @@ const Panel = ({ title, children, className = STATUS_UP }) => (
       <h3 className="panel-title">{title}</h3>
       
     </div>
-         
-
     {children}
   </div>
 );

@@ -7,7 +7,6 @@ const ServiceList = ({ statuses }) => (
   <ul className="list-group">
     {
       statuses.map(status =>{
-        {/* console.log(status); */}
         return <ServiceRow status={status} key={status.id} />
       } )
     }

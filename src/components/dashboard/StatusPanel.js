@@ -20,16 +20,8 @@ class StatusPanel extends Component {
   }
   componentDidMount() {
     const { handleWebSocketNotification } = this.props;
-    // console.log('I was triggered during render');
-    // {this.service.id};
    let cat= this.fetchStatuses();
     websocket.initialize({ onMessage: handleWebSocketNotification });
-    
-    // httpUtil.cat.then(response => {
-    //         this.setState({
-    //           repos: response.data
-    //         });
-    //       });
 
   }
   
@@ -56,7 +48,6 @@ class StatusPanel extends Component {
     }
   }
   render() {
-// console.log(this.state.statuses);
     
     let { isLoading } = this.props.status;
     let { className, message } = statusService.getOutageParams(this.state.statuses);
@@ -67,13 +58,9 @@ class StatusPanel extends Component {
     //   );
     // }
   
-      // console.log(this.state.repos)
-      // console.log(message);
-      // console.log(className);
-      
+     
     return (
       <Panel title={message} className={className}>
-        
         <div>
           <ServiceList statuses={this.state.statuses}/>
         </div>

@@ -11,7 +11,6 @@ const ServiceRow = ({ status }) => {
   let { message, className, icon } = getServiceParams(isUp(status.status));
 
   let tooltipId = `tooltip-${id}`;
-
   return (
     <li className="list-group-item">
       <span>{name}</span>
