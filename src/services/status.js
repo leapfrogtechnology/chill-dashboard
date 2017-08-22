@@ -19,6 +19,13 @@ export async function fetchServiceStatuses() {
   return data;
 }
 
+export async function fetchLogs() {
+  const { endpoints } = config.logApi;
+  const { data } = await http.get(endpoints.status);
+
+  return data;
+}
+
 /**
  * Check if a service is up by it's status.
  *

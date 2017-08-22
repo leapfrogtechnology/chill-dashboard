@@ -11,6 +11,12 @@ export default {
     },
     baseUrl: __INJECTED_CONFIG.dashboard.apiBaseUrl || 'http://localhost:8000/api'
   },
+  logApi: {
+    endpoints: {
+      status: '/status/logs'
+    },
+    baseUrl: __INJECTED_CONFIG.dashboard.apiBaseUrl || 'http://localhost:8000/api'
+  },
   websocket: {
     reconnectTimeout: 5000,
     endpoint: __INJECTED_CONFIG.dashboard.websocketBaseUrl || 'ws://localhost:8080'

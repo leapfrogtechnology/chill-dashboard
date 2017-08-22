@@ -8,6 +8,8 @@ import * as statusService from '../../services/status';
 
 import Panel from '../commons/Panel';
 import ServiceList from './ServiceList';
+import LogList from './LogList';
+
 import Spinner from '../commons/Spinner';
 
 class StatusPanel extends Component {
@@ -25,22 +27,29 @@ class StatusPanel extends Component {
    */
   async fetchStatuses() {
     const { updateStatus } = this.props;
-
-    updateStatus({ isLoading: true, services: [] });
+    console.log(this.props)
+    updateStatus({ isLoading: true, services: [], logs: [] });
 
     try {
       let services = await statusService.fetchServiceStatuses();
-
-      updateStatus({ services, isLoading: false });
+      
+      //fetch logs
+      let logs = await statusService.fetchLogs();
+      
+      updateStatus({ logs, services, isLoading: false });
     } catch (err) {
       // TODO: Show error messages
     }
   }
 
   render() {
-    let { isLoading, services } = this.props.status;
+    let { isLoading, services, logs } = this.props.status;
+    // console.log(this.props.status)
     let { className, message } = statusService.getOutageParams(services);
 
+   // <LogList logs={logs} />
+  
+    console.log(logs)
     if (isLoading) {
       return (
         <Spinner />
@@ -48,9 +57,19 @@ class StatusPanel extends Component {
     }
 
     return (
-      <Panel title={message} className={className}>
-        <ServiceList services={services} />
-      </Panel >
+
+      <div>
+
+        <Panel title={message} className={className}>
+          <ServiceList services={services} />        
+        </Panel>
+
+        <Panel title="Status Change History" className="status-up">
+            <LogList logs={logs} />  
+        </Panel>
+
+
+      </div>
     );
   }
 }

@@ -11,8 +11,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
  *
  * @returns {Promise}
  */
-async function configureWebpack() {
-  const config = await init();
+ function configureWebpack() {
+  return init().then(config => {
+
 
   return {
     entry: [
@@ -79,6 +80,8 @@ async function configureWebpack() {
       new webpack.HotModuleReplacementPlugin() // enable HMR globally
     ]
   };
+  });
+
 }
 
 module.exports = configureWebpack();
