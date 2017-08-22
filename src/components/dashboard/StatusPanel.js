@@ -27,7 +27,6 @@ class StatusPanel extends Component {
    */
   async fetchStatuses() {
     const { updateStatus } = this.props;
-    console.log(this.props)
     updateStatus({ isLoading: true, services: [], logs: [] });
 
     try {
@@ -44,12 +43,8 @@ class StatusPanel extends Component {
 
   render() {
     let { isLoading, services, logs } = this.props.status;
-    // console.log(this.props.status)
     let { className, message } = statusService.getOutageParams(services);
 
-   // <LogList logs={logs} />
-  
-    console.log(logs)
     if (isLoading) {
       return (
         <Spinner />

@@ -8,8 +8,8 @@ const LogRow = ({ log }) => {
   let { createdAt } = log;
   let status = log.status.name;
   let statusMessage = `Went ${status} at ${createdAt}`
-  // console.log(id+" "+name+" "+createdAt);
   let className = "log-status-"+status;
+  
   return (
     <li className="list-group-item">
       <span>{name}</span>
