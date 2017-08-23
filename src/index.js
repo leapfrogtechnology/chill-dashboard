@@ -12,7 +12,6 @@ const mountNode = document.getElementById('app');
 document.title = config.app.title;
 
 const renderApp = () => {
-
   render(
     <AppContainer>
       <Router />

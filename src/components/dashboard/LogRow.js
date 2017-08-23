@@ -8,12 +8,12 @@ const LogRow = ({ log }) => {
   let { createdAt } = log;
   let status = log.status.name;
   let statusMessage = `Went ${status} at ${createdAt}`
-  let className = "log-status-"+status;
+  let textColor = "log-status-"+status;
   
   return (
     <li className="list-group-item">
       <span>{name}</span>
-      <span className={`list-item-right ${className}`}>{statusMessage}</span>
+      <span className={`list-item-right ${textColor}`}>{statusMessage}</span>
     </li>
   );
 };

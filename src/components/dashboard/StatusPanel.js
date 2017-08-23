@@ -6,10 +6,9 @@ import { withStatusInfo } from '../hoc/status';
 import * as websocket from '../../services/websocket';
 import * as statusService from '../../services/status';
 
+import LogList from './LogList';
 import Panel from '../commons/Panel';
 import ServiceList from './ServiceList';
-import LogList from './LogList';
-
 import Spinner from '../commons/Spinner';
 
 class StatusPanel extends Component {
@@ -52,18 +51,13 @@ class StatusPanel extends Component {
     }
 
     return (
-
       <div>
-
         <Panel title={message} className={className}>
           <ServiceList services={services} />        
         </Panel>
-
         <Panel title="Status Change History" className="status-up">
             <LogList logs={logs} />  
         </Panel>
-
-
       </div>
     );
   }
