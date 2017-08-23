@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 const LogRow = ({ log }) => {
   let { name } = log.service;
   let { createdAt } = log;
-  let status = log.status.name;
+  let status = log.status.name.toLowerCase();
   let statusMessage = `Went ${status} at ${createdAt}`;
-  let textColor = 'log-status-' + status.toLowerCase();
+  let textColor = `log-status-${status}`;
   
   return (
     <li className="list-group-item">
