@@ -26,12 +26,13 @@ class StatusPanel extends Component {
    */
   async fetchStatuses() {
     const { updateStatus } = this.props;
+
     updateStatus({ isLoading: true, services: [], logs: [] });
 
     try {
       let services = await statusService.fetchServiceStatuses();
       
-      //fetch logs
+      // Fetch logs
       let logs = await statusService.fetchLogs();
       
       updateStatus({ logs, services, isLoading: false });

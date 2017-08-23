@@ -20,8 +20,8 @@ export async function fetchServiceStatuses() {
 }
 
 export async function fetchLogs() {
-  const { endpoints } = config.logApi;
-  const { data } = await http.get(endpoints.status);
+  const { endpoints } = config.api;
+  const { data } = await http.get(endpoints.statusLogs);
 
   return data;
 }

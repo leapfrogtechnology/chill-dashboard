@@ -1,14 +1,12 @@
 import React from 'react';
-import moment from 'moment';
 import PropTypes from 'prop-types';
-import ToolTip from 'react-tooltip';
 
 const LogRow = ({ log }) => {
   let { name } = log.service;
   let { createdAt } = log;
   let status = log.status.name;
-  let statusMessage = `Went ${status} at ${createdAt}`
-  let textColor = "log-status-"+status;
+  let statusMessage = `Went ${status} at ${createdAt}`;
+  let textColor = 'log-status-' + status.toLowerCase();
   
   return (
     <li className="list-group-item">

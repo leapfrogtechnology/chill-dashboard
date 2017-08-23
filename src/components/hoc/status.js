@@ -11,8 +11,8 @@ export const withStatusInfo = WrappedComponent => {
       super();
       this.state = {
         status: {
+          logs: [],
           services: [],
-          logs:[],
           isLoading: false
         }
       };
