@@ -16,11 +16,12 @@ class StatusPanel extends Component {
     super();
     this.state = {
       statuses: []
-    }
+    };
   }
   componentDidMount() {
     const { handleWebSocketNotification } = this.props;
-   let cat= this.fetchStatuses();
+    let getall = this.fetchStatuses();
+
     websocket.initialize({ onMessage: handleWebSocketNotification });
 
   }
@@ -39,9 +40,10 @@ class StatusPanel extends Component {
 
     try {
       let statuses = await statusService.fetchServiceStatuses();
+
       this.setState({
         statuses: statuses
-      })
+      });
       updateStatus({ services, isLoading: false });
     } catch (err) {
       // TODO: Show error messages
@@ -52,13 +54,6 @@ class StatusPanel extends Component {
     let { isLoading } = this.props.status;
     let { className, message } = statusService.getOutageParams(this.state.statuses);
 
-    // if (isLoading) {
-    //   return (
-    //     <Spinner />
-    //   );
-    // }
-  
-     
     return (
       <Panel title={message} className={className}>
         <div>

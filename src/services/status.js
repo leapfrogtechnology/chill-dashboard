@@ -26,13 +26,13 @@ export async function fetchServiceStatuses() {
  * @returns {Boolean}
  */
 export function isUp(status) {
-  if(status.name === statusmessage.STATUS_UP)
+  if (status.name === statusmessage.STATUS_UP)
      {
-  return 1;
-    }
-else{
-  return 0 ;
-}
+    return 1;
+  }
+  else {
+    return 0;
+  }
 }
 
 /**
@@ -47,11 +47,10 @@ export function getServiceCounts(services) {
   
   services.map(service =>{
     totalUp = totalUp + isUp(service.status);
-    console.log(totalUp);
   });
   
-  console.log("total up:",totalUp);
   let totalDown = total - totalUp;
+  
   return {
     total,
     totalUp,
@@ -90,8 +89,6 @@ export function getServiceParams(isOperational) {
       className: statusmessage.STATUS_DOWN_CLASS,
       message: statusmessage.STATUS_DOWN_MESSAGE
     };
-          console.log ("class ",message);
-
   }
 
   return {
@@ -110,7 +107,6 @@ export function getServiceParams(isOperational) {
 export function getOutageParams(statuses) {
   let outageLevel = getOutageLevel(statuses);
   let { total, totalUp } = getServiceCounts(statuses);
-  console.log (statuses);
 
   switch (outageLevel) {
     case outage.NONE:
@@ -128,13 +124,11 @@ export function getOutageParams(statuses) {
       };
 
     case outage.ALL:
-     console.log(statusmessage.STATUS_DOWN_CLASS);
       return {
        
         className: statusmessage.STATUS_DOWN_CLASS,
         
         message: statusmessage.ALL_STATUS_DOWN_MESSAGE
       };
-      console.log(statuses.ALL_STATUS_DOWN_MESSAGE);
   }
 }

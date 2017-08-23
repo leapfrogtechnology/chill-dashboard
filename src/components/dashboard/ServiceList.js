@@ -6,10 +6,7 @@ import ServiceRow from './ServiceRow';
 const ServiceList = ({ statuses }) => (
   <ul className="list-group">
     {
-      statuses.map(status =>{
-        return <ServiceRow status={status} key={status.id} />
-      } )
-    }
+      statuses.map(status =>{ return <ServiceRow status={status} key={status.id} /> } )}
   </ul>
 );
 
