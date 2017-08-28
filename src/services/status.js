@@ -26,8 +26,7 @@ export async function fetchServiceStatuses() {
  * @returns {Boolean}
  */
 export function isUp(status) {
-  if (status.name === statusmessage.STATUS_UP)
-     {
+  if (status.name === statusmessage.STATUS_UP) {
     return 1;
   }
   else {
@@ -44,13 +43,13 @@ export function isUp(status) {
 export function getServiceCounts(services) {
   let total = services.length;
   let totalUp = 0;
-  
-  services.map(service =>{
+
+  services.map(service => {
     totalUp = totalUp + isUp(service.status);
   });
-  
+
   let totalDown = total - totalUp;
-  
+
   return {
     total,
     totalUp,
@@ -81,7 +80,7 @@ export function getOutageLevel(services) {
  * @returns {Object} {icon, message, className}
  */
 export function getServiceParams(isOperational) {
-  
+
   if (!isOperational) {
 
     return {
@@ -118,16 +117,16 @@ export function getOutageParams(statuses) {
 
     case outage.PARTIAL:
       return {
-        
+
         className: statusmessage.PARTIAL_STATUS_DOWN_CLASS,
         message: sprintf(statusmessage.PARTIAL_STATUS_DOWN_MESSAGE, { totalUp, total })
       };
 
     case outage.ALL:
       return {
-       
+
         className: statusmessage.STATUS_DOWN_CLASS,
-        
+
         message: statusmessage.ALL_STATUS_DOWN_MESSAGE
       };
   }

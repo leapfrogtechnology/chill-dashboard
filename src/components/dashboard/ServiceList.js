@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import ServiceRow from './ServiceRow';
@@ -6,7 +6,8 @@ import ServiceRow from './ServiceRow';
 const ServiceList = ({ statuses }) => (
   <ul className="list-group">
     {
-      statuses.map(status =>{ return <ServiceRow status={status} key={status.id} /> } )}
+      statuses && statuses.map(status => <ServiceRow status={status} key={status.id} />)
+    }
   </ul>
 );
 

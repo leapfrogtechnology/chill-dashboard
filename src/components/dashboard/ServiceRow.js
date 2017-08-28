@@ -32,7 +32,7 @@ const ServiceRow = ({ status }) => {
 };
 
 ServiceRow.propTypes = {
-  service: PropTypes.object
+  status: PropTypes.object
 };
 
 export default ServiceRow;

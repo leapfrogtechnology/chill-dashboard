@@ -9,7 +9,7 @@ export default {
     endpoints: {
       status: '/status'
     },
-    baseUrl: __INJECTED_CONFIG.dashboard.apiBaseUrl || 'http://localhost:8000/api/status'
+    baseUrl: __INJECTED_CONFIG.dashboard.apiBaseUrl || 'http://localhost:8000/api'
   },
   websocket: {
     reconnectTimeout: 5000,

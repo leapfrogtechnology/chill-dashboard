@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import httpUtil from '../../utils/http';
 import { withStatusInfo } from '../hoc/status';
 
 import * as websocket from '../../services/websocket';
@@ -8,7 +7,6 @@ import * as statusService from '../../services/status';
 
 import Panel from '../commons/Panel';
 import ServiceList from './ServiceList';
-import Spinner from '../commons/Spinner';
 
 class StatusPanel extends Component {
 
@@ -20,7 +18,8 @@ class StatusPanel extends Component {
   }
   componentDidMount() {
     const { handleWebSocketNotification } = this.props;
-    let getall = this.fetchStatuses();
+
+    this.fetchStatuses();
 
     websocket.initialize({ onMessage: handleWebSocketNotification });
 
@@ -44,14 +43,13 @@ class StatusPanel extends Component {
       this.setState({
         statuses: statuses
       });
-      updateStatus({ services, isLoading: false });
+      updateStatus({ isLoading: false });
     } catch (err) {
       // TODO: Show error messages
     }
   }
   render() {
     
-    let { isLoading } = this.props.status;
     let { className, message } = statusService.getOutageParams(this.state.statuses);
 
     return (
