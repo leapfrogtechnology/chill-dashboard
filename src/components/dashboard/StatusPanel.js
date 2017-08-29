@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
 import { withStatusInfo } from '../hoc/status';
 
 import * as websocket from '../../services/websocket';
@@ -9,15 +8,25 @@ import * as statusService from '../../services/status';
 import LogList from './LogList';
 import Panel from '../commons/Panel';
 import ServiceList from './ServiceList';
-import Spinner from '../commons/Spinner';
 
 class StatusPanel extends Component {
+
+  constructor() {
+    super();
+    
+    this.state = {
+      logs: [],
+      statuses: []
+    };
+  }
   componentDidMount() {
     const { handleWebSocketNotification } = this.props;
 
     this.fetchStatuses();
+
     websocket.initialize({ onMessage: handleWebSocketNotification });
   }
+
 
   /**
    * Fetch list of services.
@@ -30,34 +39,28 @@ class StatusPanel extends Component {
     updateStatus({ isLoading: true, services: [], logs: [] });
 
     try {
-      let services = await statusService.fetchServiceStatuses();
-      
-      // Fetch logs
+      let statuses = await statusService.fetchServiceStatuses();
       let logs = await statusService.fetchLogs();
-      
-      updateStatus({ logs, services, isLoading: false });
+
+      this.setState({
+        logs: logs,
+        statuses: statuses
+      });
+      updateStatus({ logs, statuses, isLoading: false });
     } catch (err) {
       // TODO: Show error messages
     }
   }
-
   render() {
-    let { isLoading, services, logs } = this.props.status;
-    let { className, message } = statusService.getOutageParams(services);
-
-    if (isLoading) {
-      return (
-        <Spinner />
-      );
-    }
-
+    let { className, message } = statusService.getOutageParams(this.state.statuses);
+    
     return (
       <div>
         <Panel title={message} className={className}>
-          <ServiceList services={services} />        
+            <ServiceList statuses={this.state.statuses} />       
         </Panel>
         <Panel title="Status Change History" className="status-up">
-            <LogList logs={logs} />  
+            <LogList logs={this.state.logs} />  
         </Panel>
       </div>
     );
