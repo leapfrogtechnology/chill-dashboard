@@ -7,7 +7,8 @@ export default {
   },
   api: {
     endpoints: {
-      status: '/status'
+      status: '/status',
+      statusLogs: '/status/logs'
     },
     baseUrl: __INJECTED_CONFIG.dashboard.apiBaseUrl || 'http://localhost:8000/api'
   },

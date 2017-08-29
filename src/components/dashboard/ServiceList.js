@@ -11,6 +11,7 @@ const ServiceList = ({ statuses }) => (
   </ul>
 );
 
+
 ServiceList.propTypes = {
   statuses: PropTypes.array
 };
