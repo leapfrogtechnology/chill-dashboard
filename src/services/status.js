@@ -4,7 +4,7 @@ import config from '../config';
 import http from '../utils/http';
 
 import * as icons from '../constants/icons';
-import * as statuses from '../constants/statuses';
+import * as statusmessage from '../constants/statuses';
 import * as outage from '../constants/enums/outage';
 
 /**
@@ -25,8 +25,13 @@ export async function fetchServiceStatuses() {
  * @param {Object} service
  * @returns {Boolean}
  */
-export function isUp(service) {
-  return service.status === statuses.STATUS_UP;
+export function isUp(status) {
+  if (status.name === statusmessage.STATUS_UP) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
 }
 
 /**
@@ -37,7 +42,12 @@ export function isUp(service) {
  */
 export function getServiceCounts(services) {
   let total = services.length;
-  let totalUp = services.filter(isUp).length;
+  let totalUp = 0;
+
+  services.map(service => {
+    totalUp = totalUp + isUp(service.status);
+  });
+
   let totalDown = total - totalUp;
 
   return {
@@ -46,7 +56,6 @@ export function getServiceCounts(services) {
     totalDown
   };
 }
-
 /**
  * Check outage status.
  *
@@ -54,10 +63,10 @@ export function getServiceCounts(services) {
  * @returns {Number} outage
  */
 export function getOutageLevel(services) {
-  if (services.every(service => isUp(service))) {
+  if (services.every(service => isUp(service.status))) {
     return outage.NONE;
   }
-  if (services.every(service => !isUp(service))) {
+  if (services.every(service => !isUp(service.status))) {
     return outage.ALL;
   }
 
@@ -71,18 +80,20 @@ export function getOutageLevel(services) {
  * @returns {Object} {icon, message, className}
  */
 export function getServiceParams(isOperational) {
+
   if (!isOperational) {
+
     return {
       icon: icons.EXCLAMATION,
-      className: statuses.STATUS_DOWN_CLASS,
-      message: statuses.STATUS_DOWN_MESSAGE
+      className: statusmessage.STATUS_DOWN_CLASS,
+      message: statusmessage.STATUS_DOWN_MESSAGE
     };
   }
 
   return {
     icon: icons.INFO,
-    className: statuses.STATUS_UP_CLASS,
-    message: statuses.STATUS_UP_MESSAGE
+    className: statusmessage.STATUS_UP_CLASS,
+    message: statusmessage.STATUS_UP_MESSAGE
   };
 }
 
@@ -92,27 +103,27 @@ export function getServiceParams(isOperational) {
  * @param {Array} services
  * @returns {Object} {message, className}
  */
-export function getOutageParams(services) {
-  let outageLevel = getOutageLevel(services);
-  let { total, totalUp } = getServiceCounts(services);
+export function getOutageParams(statuses) {
+  let outageLevel = getOutageLevel(statuses);
+  let { total, totalUp } = getServiceCounts(statuses);
 
   switch (outageLevel) {
     case outage.NONE:
       return {
-        className: statuses.STATUS_UP_CLASS,
-        message: statuses.ALL_STATUS_UP_MESSAGE
+        className: statusmessage.STATUS_UP_CLASS,
+        message: statusmessage.ALL_STATUS_UP_MESSAGE
       };
 
     case outage.PARTIAL:
       return {
-        className: statuses.PARTIAL_STATUS_DOWN_CLASS,
-        message: sprintf(statuses.PARTIAL_STATUS_DOWN_MESSAGE, { totalUp, total })
+        className: statusmessage.PARTIAL_STATUS_DOWN_CLASS,
+        message: sprintf(statusmessage.PARTIAL_STATUS_DOWN_MESSAGE, { totalUp, total })
       };
 
     case outage.ALL:
       return {
-        className: statuses.STATUS_DOWN_CLASS,
-        message: statuses.ALL_STATUS_DOWN_MESSAGE
+        className: statusmessage.STATUS_DOWN_CLASS,
+        message: statusmessage.ALL_STATUS_DOWN_MESSAGE
       };
   }
 }

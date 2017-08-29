@@ -5,6 +5,7 @@ import StatusPanel from './StatusPanel';
 const StatusPage = () => (
   <div className="page-wrapper wrapper">
     <StatusPanel />
+    
   </div>
 );
 

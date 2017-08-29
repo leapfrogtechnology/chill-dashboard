@@ -11,9 +11,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
  *
  * @returns {Promise}
  */
-async function configureWebpack() {
-  const config = await init();
-
+function configureWebpack() {
+ return init().then((config) => {
   return {
     entry: [
       'react-hot-loader/patch',
@@ -71,7 +70,9 @@ async function configureWebpack() {
         template: path.resolve(__dirname, 'public/index.html')
       }),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        
+        
+        'process.env.NODE_ENV': JSON.stringify("development"),
         '__INJECTED_CONFIG.dashboard': JSON.stringify(config.dashboard)
       }),
       new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
@@ -79,6 +80,7 @@ async function configureWebpack() {
       new webpack.HotModuleReplacementPlugin() // enable HMR globally
     ]
   };
+    });
 }
 
 module.exports = configureWebpack();
