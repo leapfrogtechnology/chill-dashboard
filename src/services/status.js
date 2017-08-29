@@ -110,23 +110,19 @@ export function getOutageParams(statuses) {
   switch (outageLevel) {
     case outage.NONE:
       return {
-
         className: statusmessage.STATUS_UP_CLASS,
         message: statusmessage.ALL_STATUS_UP_MESSAGE
       };
 
     case outage.PARTIAL:
       return {
-
         className: statusmessage.PARTIAL_STATUS_DOWN_CLASS,
         message: sprintf(statusmessage.PARTIAL_STATUS_DOWN_MESSAGE, { totalUp, total })
       };
 
     case outage.ALL:
       return {
-
         className: statusmessage.STATUS_DOWN_CLASS,
-
         message: statusmessage.ALL_STATUS_DOWN_MESSAGE
       };
   }

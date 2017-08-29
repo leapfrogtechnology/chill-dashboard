@@ -12,6 +12,7 @@ class StatusPanel extends Component {
 
   constructor() {
     super();
+    
     this.state = {
       statuses: []
     };
@@ -22,9 +23,8 @@ class StatusPanel extends Component {
     this.fetchStatuses();
 
     websocket.initialize({ onMessage: handleWebSocketNotification });
-
   }
-  
+
 
 
   /**
@@ -40,22 +40,20 @@ class StatusPanel extends Component {
     try {
       let statuses = await statusService.fetchServiceStatuses();
 
-      this.setState({
-        statuses: statuses
-      });
+      this.setState({ statuses: statuses });
       updateStatus({ isLoading: false });
     } catch (err) {
       // TODO: Show error messages
     }
   }
   render() {
-    
+
     let { className, message } = statusService.getOutageParams(this.state.statuses);
 
     return (
       <Panel title={message} className={className}>
         <div>
-          <ServiceList statuses={this.state.statuses}/>
+          <ServiceList statuses={this.state.statuses} />
         </div>
       </Panel >
     );
