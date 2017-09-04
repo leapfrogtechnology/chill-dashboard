@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ServiceRow from './ServiceRow';
 
 const ServiceList = ({ statuses }) => (
+  
   <ul className="list-group">
     {
       statuses && statuses.map(status => <ServiceRow status={status} key={status.id} />)

@@ -12,9 +12,23 @@ import * as outage from '../constants/enums/outage';
  *
  * @returns {Promise}
  */
-export async function fetchServiceStatuses() {
+export async function fetchServiceStatuses(tokenId) {
   const { endpoints } = config.api;
-  const { data } = await http.get(endpoints.status);
+  try {
+    // const { data } = await http.get(endpoints.status);
+    // http.post(endpoints.auth, {token: token})
+    const {data} = await http.post(endpoints.auth,{}, {
+      tokenId
+   });
+
+    ///////changed hereeeeee
+    /*config ma change 
+    status ko try ma catch rakney
+    hoc ma route hunxa ani*/
+    return data;
+  } catch (err) {
+
+  }
 
   return data;
 }

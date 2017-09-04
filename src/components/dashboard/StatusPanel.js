@@ -17,6 +17,7 @@ class StatusPanel extends Component {
       statuses: []
     };
   }
+  
   componentDidMount() {
     const { handleWebSocketNotification } = this.props;
 
