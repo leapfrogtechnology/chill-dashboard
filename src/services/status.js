@@ -8,27 +8,27 @@ import * as statusmessage from '../constants/statuses';
 import * as outage from '../constants/enums/outage';
 
 /**
- * Get the latest status of the services.
- *
- * @returns {Promise}
+ * 
+ * @param {*} tokenId
+ * @returns {data}
  */
 export async function fetchServiceStatuses(tokenId) {
   const { endpoints } = config.api;
-  try {
-    // const { data } = await http.get(endpoints.status);
-    // http.post(endpoints.auth, {token: token})
-    const {data} = await http.post(endpoints.auth,{}, {
-      tokenId
-   });
 
-    ///////changed hereeeeee
-    /*config ma change 
-    status ko try ma catch rakney
-    hoc ma route hunxa ani*/
+  try {
+    const { data } = await http.post(endpoints.auth, {
+      tokenId
+    });
+
     return data;
   } catch (err) {
-
+    return next(err);
   }
+}
+
+export async function fetchLogs() {
+  const { endpoints } = config.api;
+  const { data } = await http.get(endpoints.statusLogs);
 
   return data;
 }
@@ -36,14 +36,13 @@ export async function fetchServiceStatuses(tokenId) {
 /**
  * Check if a service is up by it's status.
  *
- * @param {Object} service
+ * @param {Object} status
  * @returns {Boolean}
  */
 export function isUp(status) {
   if (status.name === statusmessage.STATUS_UP) {
     return 1;
-  }
-  else {
+  } else {
     return 0;
   }
 }
@@ -94,9 +93,7 @@ export function getOutageLevel(services) {
  * @returns {Object} {icon, message, className}
  */
 export function getServiceParams(isOperational) {
-
   if (!isOperational) {
-
     return {
       icon: icons.EXCLAMATION,
       className: statusmessage.STATUS_DOWN_CLASS,
@@ -114,7 +111,7 @@ export function getServiceParams(isOperational) {
 /**
  * Get required parameters to render the status panel.
  *
- * @param {Array} services
+ * @param {Array} statuses
  * @returns {Object} {message, className}
  */
 export function getOutageParams(statuses) {
@@ -131,7 +128,10 @@ export function getOutageParams(statuses) {
     case outage.PARTIAL:
       return {
         className: statusmessage.PARTIAL_STATUS_DOWN_CLASS,
-        message: sprintf(statusmessage.PARTIAL_STATUS_DOWN_MESSAGE, { totalUp, total })
+        message: sprintf(statusmessage.PARTIAL_STATUS_DOWN_MESSAGE, {
+          totalUp,
+          total
+        })
       };
 
     case outage.ALL:

@@ -3,9 +3,7 @@ import config from '../config';
 
 const http = axios.create({
   baseURL: config.api.baseUrl,
-  headers: {
-  }
+  headers: {}
 });
-
 
 export default http;

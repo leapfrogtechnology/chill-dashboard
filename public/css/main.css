@@ -73,6 +73,14 @@ a:hover {
   background: #fff;  
 }
 
+.log-status-up {
+  color: #19be10;
+}
+
+.log-status-down{
+  color: #e74c3c;
+}
+
 .page-footer {  
   padding: 10px 0;
   overflow: hidden;
