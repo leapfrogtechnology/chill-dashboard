@@ -1,0 +1,818 @@
+[33mcommit bad0f082d639f91fa2f157b62c4d73a34b437b3f[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m
+Author: Deepak Adhikari <deeps.adhi@gmail.com>
+Date:   Sun Sep 3 18:52:44 2017 +0545
+
+    Run eslint on commit
+
+[33mcommit 6d0729d5ec7cbc33838c62d7b6b859a237cd2dfb[m
+Merge: 7f4ab0c 6a99099
+Author: Romit Amgai <romitamgai@lftechnology.com>
+Date:   Tue Aug 29 14:22:12 2017 +0545
+
+    Merge pull request #10 from leapfrogtechnology/status-change-log
+    
+    Status change log
+
+[33mcommit 6a99099dd9eae640568fabc5af5dde4aabb0952e[m
+Merge: 3708cb2 7f4ab0c
+Author: aviskar <aviskarkc10@gmail.com>
+Date:   Tue Aug 29 14:14:13 2017 +0545
+
+    merge with dev and resolve conflict
+
+[33mcommit 7f4ab0c8296c180ec55816fee2165893ebdaa1bf[m
+Merge: 6efad79 9c20562
+Author: Romit Amgai <romitamgai@lftechnology.com>
+Date:   Tue Aug 29 13:23:23 2017 +0545
+
+    Merge pull request #11 from leapfrogtechnology/api-change-fix
+    
+    Api change fix
+
+[33mcommit 9c20562565e0744c696c6ca4cad5daa6cb54dbcd[m
+Author: aishwaryashrestha11 <asworeya2shrestha@gmail.com>
+Date:   Tue Aug 29 13:22:41 2017 +0545
+
+    Remove extra spaces
+
+[33mcommit 241ccb36b14d9834727367b565392b1ba0c8c599[m
+Author: aishwaryashrestha11 <asworeya2shrestha@gmail.com>
+Date:   Tue Aug 29 13:15:58 2017 +0545
+
+    Package.json changes
+
+[33mcommit ecdf1491e9bd17677d22f374ec4120d6f33cf73d[m
+Author: aishwaryashrestha11 <asworeya2shrestha@gmail.com>
+Date:   Mon Aug 28 10:15:50 2017 +0545
+
+    Fix issue
+
+[33mcommit d9479497a2a0db47951c19cfd3b81a00cb34e51f[m
+Author: aishwaryashrestha11 <asworeya2shrestha@gmail.com>
+Date:   Wed Aug 23 11:13:28 2017 +0545
+
+    issue fixed
+
+[33mcommit 3708cb272eedaf439d9495d398dd553310e09889[m[33m ([m[1;31morigin/status-change-log[m[33m)[m
+Author: aviskar <aviskarkc10@gmail.com>
+Date:   Wed Aug 23 10:51:43 2017 +0545
+
+    Fix issues with code
+
+[33mcommit 2aa05ac29413529bb22a0f6c45241cb8d4a67c5e[m
+Author: aviskar <aviskarkc10@gmail.com>
+Date:   Wed Aug 23 10:09:18 2017 +0545
+
+    Fix issues with code
+
+[33mcommit 84ba534bbb8f7e68bfb5902fe3f83f0e5ba7d46d[m
+Author: aviskar <aviskarkc10@gmail.com>
+Date:   Wed Aug 23 09:20:42 2017 +0545
+
+    Add logs for status change
+
+[33mcommit ca4fe5551194e537f5acefd8b1c2482c6ea09b08[m
+Author: aviskar <aviskarkc10@gmail.com>
+Date:   Tue Aug 22 22:03:23 2017 +0545
+
+    added status change log
+
+[33mcommit 947039cd2a7f517d0e3fed4d50e5d100e6d1f87a[m
+Author: aviskar <aviskarkc10@gmail.com>
+Date:   Tue Aug 22 17:51:08 2017 +0545
+
+    added log for status change
+
+[33mcommit cbfa6379f0f41936894131b0ea84250da230be19[m
+Author: aishwaryashrestha11 <asworeya2shrestha@gmail.com>
+Date:   Tue Aug 22 14:50:01 2017 +0545
+
+    dashboard
+
+[33mcommit 67c3fe1a8bd8d2cf93d088fe34066833adb2c768[m
+Author: aishwaryashrestha11 <asworeya2shrestha@gmail.com>
+Date:   Tue Aug 22 13:53:41 2017 +0545
+
+    changes
+
+[33mcommit 6efad795f5cca575619314f9a807b32649cd5fe1[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Thu Aug 17 13:53:37 2017 +0545
+
+    Update webpack config
+
+[33mcommit 48cdf419141f2cab86d532867e8d90b583357b94[m[33m ([m[1;32mmaster[m[33m)[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Thu Aug 17 13:41:14 2017 +0545
+
+    Add chill.yml in gitignore
+
+[33mcommit e449267a7850b62ee261b7a978373d0ec1d00e59[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Thu Aug 17 13:38:48 2017 +0545
+
+    Change config files
+
+[33mcommit aeaef5ec271e8bf3f9f9c39fde7822a6bdd45546[m
+Merge: a9f8d06 93e1a16
+Author: Pratish Shrestha <pratishshr@gmail.com>
+Date:   Thu Aug 17 11:08:32 2017 +0545
+
+    Merge pull request #8 from leapfrogtechnology/use-chill-config
+    
+    Inject config via chill-core config yml file instead of using dotenv
+
+[33mcommit 93e1a1613dcaed0939b0e8740239280e8c7bdfb0[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Tue Aug 15 09:56:35 2017 +0545
+
+    Update README
+
+[33mcommit 4211a24f5272f8325fd15efa53e7acb96ca63fcc[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Tue Aug 15 09:51:52 2017 +0545
+
+    Remove dotenv and .env.example
+
+[33mcommit f95281d14b5558b9785b1167cded02d0e74a972e[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Tue Aug 15 09:48:50 2017 +0545
+
+    Inject config via chill-core configuration
+
+[33mcommit 800c1f7f06dff61eb01cfc163d56c84339e26fcc[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Tue Aug 15 09:32:11 2017 +0545
+
+    Add chill-core as a dependency
+
+[33mcommit 6be96eccab48485a100726fffbb7b014817a56b3[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Tue Aug 15 09:16:39 2017 +0545
+
+    Add babael plugins
+
+[33mcommit a9f8d0600dfe19e11b088fac07e1d65f1316b601[m
+Merge: eab90a4 9153ce0
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Mon Aug 14 17:00:16 2017 +0545
+
+    Merge pull request #7 from leapfrogtechnology/recompose
+    
+    Recompose and Refactor
+
+[33mcommit 9153ce0ce039f5a9836336ae882feaaa2443de96[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Mon Aug 14 13:02:37 2017 +0545
+
+    Update lockfile
+
+[33mcommit 79a8a62a50e77d039e1970c7b37602b007502d2e[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Mon Aug 14 13:02:28 2017 +0545
+
+    Use plain HOC instead of using recompose
+
+[33mcommit dc8bdff7a15ba44187e1a272f919b35bc780673c[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Mon Aug 14 13:02:10 2017 +0545
+
+    Remove recompose
+
+[33mcommit 7847daf3299974dcb63da3c872927c5115131f8d[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Mon Aug 14 13:02:04 2017 +0545
+
+    Add trasform-class-properties plugin
+
+[33mcommit 8fb55be753b965ac62bf1e3b078b61c85914ec71[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Wed Jul 12 23:09:29 2017 +0545
+
+    Rename Dashboard component to StatusPage
+
+[33mcommit 4b51fb92a3e0e3283026fb578ac474a3236f9ef3[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Wed Jul 12 22:52:39 2017 +0545
+
+    Recompose StatusPanel component using hoc withStatusInfo
+
+[33mcommit 2e668d4771d3e9ce1673292626b921e4e33aa86c[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Wed Jul 12 20:53:14 2017 +0545
+
+    Remove constant suffixes from the constant filenames
+
+[33mcommit d7773dcd207a63962f4f4574b3a1f6197506b08e[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Wed Jul 12 20:47:25 2017 +0545
+
+    Move Router to components/ too
+
+[33mcommit d0b587c8a9767ecce5d138c9054d809747807adf[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Wed Jul 12 20:44:24 2017 +0545
+
+    Use baseHref from the config too
+
+[33mcommit 2c8b3a9af4e025a719c9a3082ff2be336a2fbad2[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Wed Jul 12 20:41:01 2017 +0545
+
+    Add recompose
+
+[33mcommit a6ab95ecca86c1e0fd578499b6570d8f4616c41d[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Wed Jul 12 20:40:50 2017 +0545
+
+    Use the same filename as component name for Dashboard
+
+[33mcommit eab90a4e4505f60c2e396fdeccc3075c853534c8[m[33m ([m[1;33mtag: v1.0.0-alpha.2[m[33m)[m
+Merge: 7f7fd03 d381e3d
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Tue Jul 4 21:26:39 2017 +0545
+
+    Merge pull request #6 from leapfrogtechnology/CHILL-13
+    
+    CHILL-13 Integrate websocket
+
+[33mcommit d381e3d999604d19ccf8577d69b60ae095cb8549[m
+Author: Bishal Shrestha <sthavisal1710@gmail.com>
+Date:   Tue Jul 4 09:36:02 2017 +0545
+
+    Update JSDoc
+
+[33mcommit b2109c416766b25207ad4aafe9040451c5108907[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Mon Jul 3 22:45:24 2017 +0545
+
+    Refactor mutated state code using ramda js
+
+[33mcommit ca2e8645212df1c4a62a4aefaff63b760c87bc02[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Mon Jul 3 22:32:45 2017 +0545
+
+    Refactor websocket code and fix filename case issue
+
+[33mcommit a64fa59bbb1d935f5cbde7f2cc66961a7862fdde[m
+Author: Bishal Shrestha <sthavisal1710@gmail.com>
+Date:   Sun Jul 2 12:54:50 2017 +0545
+
+    CHILL-13 Run lint:fix
+
+[33mcommit 4d8668d08179b53a05885ecaea30af4e4600a806[m
+Author: Bishal Shrestha <sthavisal1710@gmail.com>
+Date:   Sun Jul 2 12:48:13 2017 +0545
+
+    CHILL-13 Integrate websocket
+
+[33mcommit 7f7fd03970e7b72701cad7b45c51bade6de86282[m
+Merge: 4187502 f277150
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu Jun 29 17:38:47 2017 +0545
+
+    Merge pull request #5 from leapfrogtechnology/dashboard-redesign
+    
+    Dashboard redesign
+
+[33mcommit f2771505d058c00d7191f5b070d9734495634c6a[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 22:20:45 2017 +0545
+
+    Use exclamation for outage tooltip icon
+
+[33mcommit 67467fcb9be24ed2d05a7ee8175ebfda8d3e5971[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 21:47:16 2017 +0545
+
+    Add operational system count on partial outage
+
+[33mcommit 9795cb85523a45966b21e5f80d0e5d6b3caf6ec6[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 19:20:45 2017 +0545
+
+    Switch to exporting each constant
+
+[33mcommit 02e5d4fe77aee06b96af8d413cb11bc02ac44f58[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 11:27:56 2017 +0545
+
+    Update jsdoc
+
+[33mcommit a21dacf867f06e1367811c5be919eef3a2383901[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 11:22:16 2017 +0545
+
+    Add tooltip
+
+[33mcommit bc63ebc8350b571fb59a8df04242f28e172027ac[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 10:38:18 2017 +0545
+
+    Create constants file for status constants
+
+[33mcommit 86412beea4eb42484d7319bfc7479b49e1ebb3d3[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 10:34:06 2017 +0545
+
+    Create enum of Outage conditions
+
+[33mcommit 8d54fb8c0a950b0ae061673568bca80871f15eaa[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 10:32:40 2017 +0545
+
+    Add condition for showing partial down status
+
+[33mcommit fc252bcc7617720543b57ddf6ae64b3419792aaa[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 10:31:15 2017 +0545
+
+    Add class for partial down status
+
+[33mcommit adc7023735d2bf7f7bb6451ce8d9d50f21157537[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 10:04:06 2017 +0545
+
+    Move status message logic to service
+
+[33mcommit 5b636a4aa336f8024c09e3fd1c8a063ab5817607[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 10:03:23 2017 +0545
+
+    Separate list into multiple components
+
+[33mcommit fa7c2e9e77bde63d7a9e56e6c88c63fb315b1074[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Wed Jun 28 10:02:45 2017 +0545
+
+    Change outage color
+
+[33mcommit 784597e2715adba1aa246386cc4f9c33731ffb10[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 10:46:56 2017 +0545
+
+    Separate component into StatusPanel and ServiceList
+
+[33mcommit 90fb48641250051c2c276bc5cb335544269f136d[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 10:35:18 2017 +0545
+
+    Move status constants to service
+
+[33mcommit 365d40f68b8a4a941cde4ce59d66749362d8c0f4[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 10:31:36 2017 +0545
+
+    Add a tag only on 'chill'
+
+[33mcommit fb03b2406bb8d6ae5872bf4e2d7dd6f14c464080[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 10:06:54 2017 +0545
+
+    Change for..in loop to for..of
+
+[33mcommit 484f9d51fd6c386009867f6e44064d97d20ce855[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 10:05:42 2017 +0545
+
+    Update jsDoc
+
+[33mcommit 5bf271ae7990876b60b0a69412b4037b3a48ada8[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 10:04:32 2017 +0545
+
+    Remove unnecessary braces from spinner
+
+[33mcommit a41856b00c943ddba9d5edb1bc97cab206f2c0c4[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 10:03:51 2017 +0545
+
+    Change to es6 export in config
+
+[33mcommit e6817928854023b15842f9fb575e2e2202b2f1fe[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 10:02:53 2017 +0545
+
+    Use destructuring while using config
+
+[33mcommit d00a6cede2cec03965bbe1f7ef4db4a27d6414a5[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:30:32 2017 +0545
+
+    Update jsdoc
+
+[33mcommit 64a66bc1003ab6356e35d14ffeb91f6e8739ae48[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:03:26 2017 +0545
+
+    Fetch status and render data with correct messages
+
+[33mcommit 3084f8e8aa97f5bb4ebf84b27fc3ea2189c1bf75[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:02:59 2017 +0545
+
+    Create a custom panel component
+
+[33mcommit 18e4a0e8a878100ded1b9f477fba6c4a80e72f07[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:02:44 2017 +0545
+
+    Update route constants
+
+[33mcommit 2cc4297b5a30feb45a00c57d3e5889a3b4a241c2[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:02:30 2017 +0545
+
+    Add a custom loading spinner
+
+[33mcommit 271544113f0096d68fab7a315d749bf3fe03cd01[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:02:19 2017 +0545
+
+    Create header and footer
+
+[33mcommit 93b44f2664c9c40132021ea40b17f66234065445[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:02:06 2017 +0545
+
+    Update routes
+
+[33mcommit 931123005e5422b485675ab4b124af6b824543b5[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:01:49 2017 +0545
+
+    Separate public imports
+
+[33mcommit 3dc0f4e272c77454d7e16a189c42ed80b3d38564[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:01:27 2017 +0545
+
+    Update config
+
+[33mcommit 6e32902dc42491b4ee028294dc3da926a3b6677c[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:01:17 2017 +0545
+
+    Add css for new design
+
+[33mcommit 7d92e51317c5fcae03a82253215a18a474a75bde[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 09:00:43 2017 +0545
+
+    Update environment variables
+
+[33mcommit 84eb0c92b421c6fc85eb1f94e859f0942851aa4d[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Tue Jun 27 08:59:43 2017 +0545
+
+    Remove unwanted dependencies
+
+[33mcommit 9544981ccd9ea6f3ed05be5435c8e31055f582ce[m
+Author: pratishshr <vanroshr@gmail.com>
+Date:   Mon Jun 26 10:57:22 2017 +0545
+
+    Remove existing dashboard design
+
+[33mcommit 418750203c16c514f89f1bc6aeaa896473d80cc6[m
+Merge: 02b61cf 8355e1b
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu Jun 22 09:11:51 2017 +0545
+
+    Merge pull request #4 from leapfrogtechnology/Chill-Dashboard-Refactor
+    
+    Remove server code from chill-dashboard
+
+[33mcommit 8355e1b2092978c1b9a939aecefcc4712d949096[m
+Author: Saugat Acharya <mesaugat@gmail.com>
+Date:   Wed Jun 21 23:41:16 2017 +0545
+
+    Remove package http-proxy-middleware
+
+[33mcommit 296e4863b1dde8d0f4accfa1d00c94189917fe6a[m
+Author: Saugat Acharya <mesaugat@gmail.com>
+Date:   Wed Jun 21 23:38:11 2017 +0545
+
+    Remove mocha from environment and add browser
+
+[33mcommit 994563513a321bf66fe5f805c358dc1c38fb8055[m
+Author: Saugat Acharya <mesaugat@gmail.com>
+Date:   Wed Jun 21 23:38:02 2017 +0545
+
+    Remove example database file
+
+[33mcommit 9925a035604514e5220f21788aa2fa588b29e456[m
+Author: Saugat Acharya <mesaugat@gmail.com>
+Date:   Wed Jun 21 23:24:24 2017 +0545
+
+    Move dotenv to dev dependencies
+
+[33mcommit 342005361331e7d33f68f8451d622bd271fa13b8[m
+Author: Saugat Acharya <mesaugat@gmail.com>
+Date:   Wed Jun 21 23:23:27 2017 +0545
+
+    Remove package: supertest
+
+[33mcommit b7b712939ce66aa03834520de5b2c15b0505519c[m
+Author: prabin <prabin.drag01@gmail.com>
+Date:   Wed Jun 21 23:10:42 2017 +0545
+
+    chill-dashboard Fix PR comments;
+
+[33mcommit a69d7f57b93d3cabce1bcb284dca4d99dc2e6089[m
+Author: prabin <prabin.drag01@gmail.com>
+Date:   Wed Jun 21 23:03:26 2017 +0545
+
+    chill-dashboard Add props validation
+
+[33mcommit 9dda7b0c4be6eecca79a938378136070e29fee96[m
+Author: prabin <prabin.drag01@gmail.com>
+Date:   Wed Jun 21 22:32:43 2017 +0545
+
+    chill-dashboard Remove eslinttrc
+
+[33mcommit 2af58c046b0b8a869539999336258da9bc4d84fc[m
+Author: prabin <prabin.drag01@gmail.com>
+Date:   Wed Jun 21 22:22:33 2017 +0545
+
+    chill-dashboard Fix PR bugs
+
+[33mcommit 4be16a538acdc88b9136ec0d2f7b4e6e71f20783[m
+Author: prabin <prabin.drag01@gmail.com>
+Date:   Wed Jun 21 22:15:07 2017 +0545
+
+    chill-dashboard Resolve PR bugs
+
+[33mcommit c8916c22a38315e535403438b6bd4f695c7d3129[m
+Author: prabin <prabin.drag01@gmail.com>
+Date:   Wed Jun 21 21:47:06 2017 +0545
+
+    Chill-Dashboard Code refactor
+
+[33mcommit 02b61cf45532e0366bfa2be9ddfe47eefeff77a8[m[33m ([m[1;33mtag: v1.0.0-alpha.1[m[33m)[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Fri Jun 2 21:34:31 2017 +0545
+
+    Chill Dashboard 1.0.0-alpha.1
+
+[33mcommit acef073202b80e928ae5c6aca4c7c0c1affce737[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Fri Jun 2 21:01:51 2017 +0545
+
+    Fix webpack production build issue
+
+[33mcommit e052bf29dc3eed1b7d2ffb30cceaf29212404fff[m
+Author: Saugat Acharya <mesaugat@gmail.com>
+Date:   Fri Jun 2 15:07:37 2017 +0545
+
+    Minor fixes
+
+[33mcommit e973be4cf60f6dc1af3f913126f88c3fff801f86[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Fri Jun 2 13:43:24 2017 +0545
+
+    Add build scripts
+
+[33mcommit 4c2b5c0c83a3b81aec0e912fb130385c7b912718[m
+Merge: fcdb52e 7cc3b69
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu Jun 1 20:51:11 2017 +0545
+
+    Merge pull request #2 from leapfrogtechnology/CHILL-1
+    
+    Create chill-dashboard using React
+
+[33mcommit 7cc3b6995ee8707e8be7fd817ce5ded9c61d8f4a[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu Jun 1 19:53:55 2017 +0545
+
+    Version fix
+
+[33mcommit 8d0c6eb3647c31c4a879ac18402bc272913d9b83[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu Jun 1 19:46:28 2017 +0545
+
+    Display readable timestamp using moment
+
+[33mcommit b019c8a1105469ed874a67f999f0a17bac2d624e[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu Jun 1 19:42:20 2017 +0545
+
+    UI Improvements on the dashboard
+
+[33mcommit e545b0c761af0c411b3d21fdb2f16e00d08b6ec7[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu Jun 1 19:19:44 2017 +0545
+
+    Extract MainWrapper component from the Dashboard
+
+[33mcommit bba16370a6bdbd78cc096f9adb6c951b40b61914[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu Jun 1 13:39:20 2017 +0545
+
+    Refactor frontend code
+
+[33mcommit 92a8f3ce85c503a64f795c6bd8969c340d5c1a4e[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu Jun 1 12:50:31 2017 +0545
+
+    Minor improvements on the backend
+
+[33mcommit c7441676f932bb984b468be6c2f518ad7e50d63d[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu Jun 1 00:27:33 2017 +0545
+
+    Update package.json and npm scripts
+
+[33mcommit e2d68a60a340d0fb11c13d39dd449d6996a20e47[m
+Author: Deepak Adhikari <deeps.adhi@gmail.com>
+Date:   Wed May 31 08:04:52 2017 +0545
+
+    Rename filename status to statusLog
+
+[33mcommit ff487dbe8a92d5e2afcaf3d62d47b8774e86de78[m
+Author: Deepak Adhikari <deeps.adhi@gmail.com>
+Date:   Wed May 31 08:04:25 2017 +0545
+
+    Chnage controller name
+
+[33mcommit 5cfb75519145a87064b7827cfccb0452ac286bc6[m
+Merge: dfa6f1e 1c08a42
+Author: Deepak Adhikari <deeps.adhi@gmail.com>
+Date:   Mon May 29 22:10:52 2017 +0545
+
+    Merge branch 'CHILL-1' of github.com:leapfrogtechnology/chill-dashboard into CHILL-1
+
+[33mcommit dfa6f1e27d0e160c96df9d7515d8db96b0f0f2f8[m
+Author: Deepak Adhikari <deeps.adhi@gmail.com>
+Date:   Mon May 29 22:10:28 2017 +0545
+
+    Remove query builder code
+
+[33mcommit 9342647e678bdc8dc441cabbaec74c0f8c73e973[m
+Author: Deepak Adhikari <deeps.adhi@gmail.com>
+Date:   Mon May 29 22:08:36 2017 +0545
+
+    Latest service status grouped by name
+
+[33mcommit 8f026df613494c4554a864974f7e497e75d891e1[m
+Author: Deepak Adhikari <deeps.adhi@gmail.com>
+Date:   Mon May 29 22:07:29 2017 +0545
+
+    Change method name
+
+[33mcommit 1c08a42f9bf4e45993e7d59d0642c80cb18f6cc2[m
+Author: Saugat Acharya <mesaugat@gmail.com>
+Date:   Mon May 29 16:17:54 2017 +0545
+
+    Rename commands
+
+[33mcommit 6ff42eae46042adfb06261d15f179351197df394[m
+Author: Saugat Acharya <mesaugat@gmail.com>
+Date:   Mon May 29 16:10:14 2017 +0545
+
+    Remove constructor
+
+[33mcommit 2fae43a3082aee6885670976944d81dec3dec55b[m
+Author: Saugat Acharya <mesaugat@gmail.com>
+Date:   Mon May 29 16:08:31 2017 +0545
+
+    Remove unused packages
+
+[33mcommit 0c2f0bfd29f1917452014da51040e6a537989358[m
+Author: Saugat Acharya <mesaugat@gmail.com>
+Date:   Mon May 29 16:08:24 2017 +0545
+
+    Fixes
+
+[33mcommit 8d3dddb3d3455f60d9e99e8c31075204c31f4e3d[m
+Author: Deepak Adhikari <deeps.adhi@gmail.com>
+Date:   Sun May 28 17:44:10 2017 +0545
+
+    Service status grouped by name
+
+[33mcommit 2d524e3c34aeb0170b196727a43acbf89eec5b97[m
+Author: Deepak Adhikari <deeps.adhi@gmail.com>
+Date:   Sun May 28 17:43:21 2017 +0545
+
+    Display createdAt ts
+
+[33mcommit 433ae5b3aed74b74c6bd1e3ea60877984a22e948[m
+Author: romitamgai <rom_amgai@hotmail.com>
+Date:   Fri May 26 18:05:40 2017 +0545
+
+    HOTFIX for deepak
+
+[33mcommit 7d911dc093db4e06698b8920f9b26f4efc393a3b[m
+Author: romitamgai <rom_amgai@hotmail.com>
+Date:   Fri May 26 17:43:33 2017 +0545
+
+    Change travis config
+
+[33mcommit 52c32f34bf2d0cd7e363ca4283dd8589f64c22a9[m
+Author: romitamgai <rom_amgai@hotmail.com>
+Date:   Fri May 26 17:38:46 2017 +0545
+
+    Fix comments
+
+[33mcommit a417a6fe23bfe715296f1f718cdb7ae3aa1a1cdd[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Thu May 25 18:58:20 2017 +0545
+
+    CHILL-1 Remove previous leftover view code
+
+[33mcommit ca0f5379b4b7059d7b2714964643ee49c22625e0[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Thu May 25 15:12:22 2017 +0545
+
+    CHILL-1 Take api endpoint from env file
+
+[33mcommit 28e09049d4051c1a7526217c0a0083414b1cc0df[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Wed May 24 19:44:42 2017 +0545
+
+    CHILL-1 Refactor code
+
+[33mcommit 3597fb2984a1c9de37529ed0d4a1e564ed77f556[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Tue May 23 20:22:46 2017 +0545
+
+    CHILL-1 Migrate from vue to reactjs
+
+[33mcommit fcdb52e2642eb1f928c85126758b09d2b6c1c50c[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu May 18 09:11:00 2017 +0545
+
+    Minor fixes
+
+[33mcommit 30cd003b107a8bb8a7cfb4ba4e280a7be3461e45[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu May 18 09:01:51 2017 +0545
+
+    Remove unnecessary files and dependencies
+
+[33mcommit 40e8b0ab4abd5099dbd8eeb6bacf6582df01fe3b[m
+Merge: 76b7067 aede680
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Thu May 18 08:43:18 2017 +0545
+
+    Merge Frontend branch CHILL-11 and resolve conflicts
+
+[33mcommit aede680d154bc9f166d6d31e4da00fc85fb080fd[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Wed May 10 15:09:10 2017 +0545
+
+    CHILL-11 Change eslintrc config file
+
+[33mcommit bbfe36091fccc7ded6455531c92a482dcd85d68e[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Wed May 10 14:49:54 2017 +0545
+
+    CHILL-11 Merge with master
+
+[33mcommit d8005ee90bbd251b148466a83fb8353231966a2b[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Tue May 9 06:03:25 2017 +0545
+
+    CHILL-11 Remove static folder
+
+[33mcommit 76b70674fb604499c73a7a88e6f476366ef14533[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Mon May 8 21:04:12 2017 +0545
+
+    Minor fixes
+
+[33mcommit 7cfe292fcd9802136c568f6bc39838745eb6a5f0[m
+Author: Kabir Baidhya <kabirbaidhya@gmail.com>
+Date:   Mon May 8 20:38:14 2017 +0545
+
+    Re-organize directory structure
+
+[33mcommit 1040f302ccb0560e4632bc7969d48d2d6436c4f1[m
+Author: Deepak Adhikari <deeps.adhi@gmail.com>
+Date:   Mon May 8 16:51:53 2017 +0545
+
+    REST API
+
+[33mcommit 1f41087b2ef6951fe6b27a7b0220935696e52736[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Mon May 8 07:15:13 2017 +0545
+
+    CHILL-11 Separate out the components
+
+[33mcommit 79bc6c45796c1c50185e152a7d70f01a0aac03a2[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Tue May 2 22:24:23 2017 +0545
+
+    Add charts
+
+[33mcommit 9d410d8769542834a9d5cd43c359e8f59acb1abc[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Mon May 1 20:43:58 2017 +0545
+
+    CHILL-11 Add panels to dashboard
+
+[33mcommit 36142b04f918f95200724423eb38a06e7ebbe3ae[m
+Author: Bishal Shrestha <bishal@adf.local>
+Date:   Mon May 1 20:20:10 2017 +0545
+
+    CHILL-1 Initial setup
