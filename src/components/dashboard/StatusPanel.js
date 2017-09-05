@@ -38,7 +38,7 @@ class StatusPanel extends Component {
     try {
       let statuses = await statusService.fetchServiceStatuses();
       let logs = await statusService.fetchLogs();
-
+      //consoleshsjgduk
       this.setState({
         logs: logs,
         statuses: statuses
