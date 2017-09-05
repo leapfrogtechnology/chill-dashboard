@@ -13,7 +13,7 @@
     "prepush": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
+    "*.js": ["eslint --fix", "git commit"]
   },
   "keywords": ["chill", "dashboard"],
   "authors": [
