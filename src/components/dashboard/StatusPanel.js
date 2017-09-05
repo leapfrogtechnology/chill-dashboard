@@ -1,13 +1,13 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { withStatusInfo } from '../hoc/status';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { withStatusInfo } from "../hoc/status";
 
-import * as websocket from '../../services/websocket';
-import * as statusService from '../../services/status';
+import * as websocket from "../../services/websocket";
+import * as statusService from "../../services/status";
 
-import LogList from './LogList';
-import Panel from '../commons/Panel';
-import ServiceList from './ServiceList';
+import LogList from "./LogList";
+import Panel from "../commons/Panel";
+import ServiceList from "./ServiceList";
 
 class StatusPanel extends Component {
   constructor() {
