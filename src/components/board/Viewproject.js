@@ -17,7 +17,7 @@ class Viewproject extends Component {
   }
 
   async fetchProjects() {
-    console.log("test");
+    console.log("nbavs");
     console.log("test2");
     try {
       const projects = await projectServices.fetch();
