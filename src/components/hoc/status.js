@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 /** * @param {Object} WrappedComponent
  * @param {Object} WrappedComponent
  * @returns {Object}
- * 
+ *
  * HOC that wraps the status page component with state
  * containing latest status of services.
  */
@@ -44,6 +44,7 @@ export const withStatusInfo = WrappedComponent => {
         status.services
       );
 
+      st;
       this.setStatus(Object.assign({}, status, { services }));
     };
 

@@ -8,22 +8,16 @@ import * as statusmessage from '../constants/statuses';
 import * as outage from '../constants/enums/outage';
 
 /**
- * 
+ *
  * @param {*} tokenId
  * @returns {data}
  */
-export async function fetchServiceStatuses(tokenId) {
+
+export async function fetchServiceStatuses() {
   const { endpoints } = config.api;
+  const { data } = await http.get(endpoints.status);
 
-  try {
-    const { data } = await http.post(endpoints.auth, {
-      tokenId
-    });
-
-    return data;
-  } catch (err) {
-    return next(err);
-  }
+  return data;
 }
 
 export async function fetchLogs() {

@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
+import { withRouter, Link } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
-import {fetchServiceStatuses} from '../../services/status';
+import Check from './check';
+import { fetchProjectServices } from '../../services/project';
 
 class Login extends Component {
-
-  responseGoogle = async (response) => {
-    const { tokenId } = response;
-    console.log('i am token', tokenId);
-    let res = await fetchServiceStatuses(tokenId);
-  }
+  responseGoogle = response => {
+    fetchProjectServices(response.tokenId);
+    this.props.history.push('/viewproject');
+  };
 
   render() {
-    console.log(this.tokenId);
-
     return (
-
       <div>
-
         <GoogleLogin
           clientId="739933093379-7q3mdd5pec4pj9n8vhpgfpdv7ijqcgtc.apps.googleusercontent.com"
           buttonText="Login"
@@ -30,4 +25,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

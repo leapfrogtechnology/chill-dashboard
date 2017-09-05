@@ -48,6 +48,7 @@ class StatusPanel extends Component {
       // TODO: Show error messages
     }
   }
+
   render() {
     let { className, message } = statusService.getOutageParams(
       this.state.statuses

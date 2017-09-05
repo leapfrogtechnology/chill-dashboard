@@ -5,22 +5,17 @@
   "scripts": {
     "start": "webpack-dev-server",
     "clean": "rimraf dist",
-    "build:app": "webpack --config=webpack.config.production.js --progress --colors -p",
+    "build:app":
+      "webpack --config=webpack.config.production.js --progress --colors -p",
     "build": "NODE_ENV=production run-s lint clean build:app",
     "lint": "eslint src test; exit 0",
     "lint:fix": "eslint src test --fix; exit 0",
-    "precommit": "lint-staged"
+    "prepush": "lint-staged"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
+    "*.js": ["eslint --fix", "git add"]
   },
-  "keywords": [
-    "chill",
-    "dashboard"
-  ],
+  "keywords": ["chill", "dashboard"],
   "authors": [
     "Bishal Shrestha",
     "Deepak Adhikari",
@@ -34,6 +29,7 @@
     "babel-cli": "^6.26.0",
     "bootstrap": "^3.3.7",
     "chill-core": "https://github.com/leapfrogtechnology/chill-core#master",
+    "jwt-decode": "^2.2.0",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "ramda": "^0.24.1",
@@ -89,9 +85,5 @@
     "node": ">= 6.9.0",
     "npm": ">= 3.10.8"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
 }

@@ -50,7 +50,7 @@
 //                                     className="textwrapper"
 //                                     type="text"
 //                                     placeholder="eg:www.keyelo.com/about"
-                                
+
 //                                 />
 
 //                                 <div className="chkbox">
@@ -69,7 +69,7 @@
 //                                         </div>
 //                                    </form>
 //                                 </div>
-                              
+
 //                                     <button type="button" onClick={this.handleRemoveservice(idx)} className="primary small clearfix">Remove</button>
 //                                 </div>    </div>
 //                             ))}
