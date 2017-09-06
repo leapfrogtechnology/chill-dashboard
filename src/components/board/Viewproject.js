@@ -34,7 +34,7 @@ class Viewproject extends Component {
     return (
       <div className="row yellow">
         im from VIEWPROJECT
-        {console.log(this.state.projects)}
+        {/* {console.log(this.state.projects)}  */}
         <ProjectList projectlist={this.state.projects} />
         {/* <h2> {this.state.projects[0] && this.state.projects[0].name}</h2> */}
         {/* console.log({projects.map})

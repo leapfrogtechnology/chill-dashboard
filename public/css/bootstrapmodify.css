@@ -1,0 +1,34 @@
+.col-md-10 {
+  padding-left: 0px;
+}
+.col10 {
+  min-height: 0px;
+  /* background-color: pink;  */
+  /* background-color:
+rgba(176, 255, 217, 0.64); */
+  height: 600px;
+  color: #000;
+}
+/*colors define  */
+.color1 {
+  background-color: grey;
+  margin: 0px;
+}
+
+.color2 {
+  background-color: lightblue;
+  margin: 0px;
+}
+.color3 {
+  background-color: lightskyblue;
+  margin: 0px;
+}
+/*colors define ends */
+.topcontainer {
+  height: 100px;
+  background-color: lightblue;
+}
+.buttomcontainer {
+  height: 400px;
+  background-color: lightgrey;
+}

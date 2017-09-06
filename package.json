@@ -10,7 +10,7 @@
     "build": "NODE_ENV=production run-s lint clean build:app",
     "lint": "eslint src test; exit 0",
     "lint:fix": "eslint src test --fix; exit 0",
-    "prepush": "set CI=true&&npm test&&eslint"
+    "prepush": "lint-staged"
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"]

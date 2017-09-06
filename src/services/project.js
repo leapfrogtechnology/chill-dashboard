@@ -1,11 +1,11 @@
-import { sprintf } from 'sprintf-js';
+import { sprintf } from "sprintf-js";
 
-import config from '../config';
-import http from '../utils/http';
+import config from "../config";
+import http from "../utils/http";
 
-import * as icons from '../constants/icons';
-import * as statusmessage from '../constants/statuses';
-import * as outage from '../constants/enums/outage';
+import * as icons from "../constants/icons";
+import * as statusmessage from "../constants/statuses";
+import * as outage from "../constants/enums/outage";
 
 /**
  *
@@ -21,12 +21,13 @@ export async function fetchProjectServices(tokenId) {
     const { data } = await http.post(endpoints.auth, {
       tokenId
     });
+    console.log(tokenId);
 
-    console.log('hellloo');
-    console.log(data);
-    localStorage.setItem('accesToken', data.accessToken);
-    localStorage.setItem('refreshToken', data.refreshToken);
-    
+    console.log("access token ", data);
+    console.log(data.accessToken);
+    localStorage.setItem("accesToken", data.accessToken);
+    localStorage.setItem("refreshToken", data.refreshToken);
+
     return data;
   } catch (err) {
     return next(err);
