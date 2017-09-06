@@ -7,7 +7,12 @@ import profilepictures from '../../../public/images/profilepictures.png';
 
 const sidebarLinks = [
   { label: 'Dashboard', to: '/' },
-  { label: 'AddProjectttttt', to: '/addproject' }
+  { label: 'AddProject', to: '/addproject' },
+  { label: 'AddProject', to: '/addproject' },
+  { label: 'AddProject', to: '/addproject' },
+  { label: 'AddProject', to: '/addproject' },
+  { label: 'AddProject', to: '/addproject' },
+  { label: 'AddProject', to: '/addproject' }
 ];
 
 class Sidebar extends Component {
@@ -29,7 +34,7 @@ class Sidebar extends Component {
                 </li>
               ))}
             </div>
-            <li>
+            {/* <li>
               <a href="#">Services</a>
             </li>
             <li>
@@ -37,7 +42,7 @@ class Sidebar extends Component {
             </li>
             <li>
               <a href="#">Git</a>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>

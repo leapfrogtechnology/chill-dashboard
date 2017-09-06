@@ -1,6 +1,6 @@
-import React from "react";
-import config from "../config";
-import http from "../utils/http";
+import React from 'react';
+import config from '../config';
+import http from '../utils/http';
 
 export function fetch() {
   const { endpoints } = config.api;
@@ -8,9 +8,9 @@ export function fetch() {
   return http({
     // url: endpoints + `/self/projects`,
     url: `http://localhost:8000/api/self/projects`,
-    method: "GET",
+    method: 'GET',
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("accesToken")}`
+      Authorization: `Bearer ${localStorage.getItem('accesToken')}`
     }
   });
 }

@@ -131,6 +131,7 @@ html {
   -ms-transition: width 0.5s ease-in;
   transition: width 0.5s ease-in;
 }
+
 .sidebar-nav li:first-child {
   color: #000;
   /* background-color: #1aa; */
@@ -692,9 +693,6 @@ ul {
 }
 h1 {
   color: black;
-}
-.selected {
-  background-color: royalblue;
 }
 
 .btn-primary.floatr {

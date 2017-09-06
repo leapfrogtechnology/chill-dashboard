@@ -9,6 +9,16 @@ rgba(176, 255, 217, 0.64); */
   height: 600px;
   color: #000;
 }
+.pagetitle {
+  height: 50px;
+  width: 100%;
+  /* background: red; */
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #2f4f4f;
+  font-size: 30px;
+  line-height: 50px;
+}
 /*colors define  */
 .color1 {
   background-color: grey;
@@ -31,4 +41,25 @@ rgba(176, 255, 217, 0.64); */
 .buttomcontainer {
   height: 400px;
   background-color: lightgrey;
+}
+/*sidebar css start  */
+.selected {
+  background-color: #aec5e2;
+}
+
+/*sidebar css end  */
+div.box1:nth-child(odd) {
+  background-color: rgb(26, 85, 56);
+}
+
+div.box1:nth-child(even) {
+  background-color: #1e2630;
+}
+
+.circle-tile-even {
+  background-color: rgb(26, 85, 56);
+}
+
+.circle-tile-odd {
+  background-color: #1e2630;
 }

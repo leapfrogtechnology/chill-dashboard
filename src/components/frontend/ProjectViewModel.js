@@ -26,7 +26,7 @@ class ProjectViewModel extends Component {
   render() {
     return (
       <div>
-        im from project view model
+        <div className="pagetitle">Project Overview</div>
         <ProjectList projectlist={this.state.projects} />
       </div>
     );
