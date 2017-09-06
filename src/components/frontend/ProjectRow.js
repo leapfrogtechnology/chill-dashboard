@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "react-proptypes";
+import PropTypes from "prop-types";
 
 const ProjectRow = () => (
   <div className={`col-lg-2 col-sm-6 `}>

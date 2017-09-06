@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import ProjectView from "./ProjectViewModel";
 
-const ProjectView = () => (
+const ButtomContainer = () => (
   <div className="container-fluid buttomcontainer ">
     <ProjectView />
   </div>
 );
-export default Buttoncontainer;
+export default ButtomContainer;

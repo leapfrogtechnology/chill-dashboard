@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import TopContainer from './Topcontainer';
-import ButtonContainer from './Buttoncontainer';
+import TopContainer from "./Topcontainer";
+import ButtomContainer from "./ButtomContainer";
 
 const Container = () => (
   <div className="col10">
     <div>
       <TopContainer />
-      <ButtonContainer />
+      <ButtomContainer />
     </div>
   </div>
 );
