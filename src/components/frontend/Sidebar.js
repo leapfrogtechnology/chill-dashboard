@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import logoCheck from "../../../public/images/logocheck.png";
-import { NavLink } from "react-router-dom";
-import { withRouter } from "react-router";
+import React, { Component } from 'react';
+import logoCheck from '../../../public/images/logocheck.png';
+import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
-import profilepictures from "../../../public/images/profilepictures.png";
+import profilepictures from '../../../public/images/profilepictures.png';
 
 const sidebarLinks = [
-  { label: "Dashboard", to: "/" },
-  { label: "AddProjectttttt", to: "/addproject" }
+  { label: 'Dashboard', to: '/' },
+  { label: 'AddProjectttttt', to: '/addproject' }
 ];
 
 class Sidebar extends Component {

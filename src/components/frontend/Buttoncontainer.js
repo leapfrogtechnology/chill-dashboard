@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import ProjectView from "./ProjectViewModel";
-import Checkonly from "../board/Checkonly";
+import ProjectView from './ProjectViewModel';
+import Checkonly from '../board/Checkonly';
 
 class Buttoncontainer extends Component {
   render() {

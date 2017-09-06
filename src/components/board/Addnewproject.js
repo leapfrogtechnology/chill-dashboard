@@ -3,23 +3,21 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Addnewproject extends Component {
-    constructor() {
-        super();
-        this.state = {
-            first: true,
-            name: '',
-            services: [{ name: '' }],
-        };
-    }
+  constructor() {
+    super();
+    this.state = {
+      first: true,
+      name: '',
+      services: [{ name: '' }]
+    };
+  }
 
-    handleNameChange = (evt) => {
-        this.setState({ name: evt.target.value });
-    }
+  handleNameChange = (evt) => {
+    this.setState({ name: evt.target.value });
+  }
 
-
-
-    render() {
-        return (
+  render() {
+    return (
             <div className="content green">
                 <h4>Add Project</h4>
                 <form onSubmit={this.handleSubmit}>
@@ -57,8 +55,8 @@ class Addnewproject extends Component {
                 </form>
             </div>
 
-        )
-    }
+    );
+  }
 }
 
 export default Addnewproject;

@@ -1,18 +1,18 @@
-import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import config from "../config";
-import Login from "./board/Login";
-import Footer from "./commons/Footer";
-import Header from "./commons/Header";
-import Dashboard from "./board/Dashboard";
-import * as routes from "../constants/routes";
-import Check from "../components/board/check";
-import Viewproject from "./board/Viewproject";
-import StatusPage from "./dashboard/StatusPage";
-import Addnewservice from "./board/Addnewservice";
-import Addnewproject from "./board/Addnewproject";
-import Projectpanel from "../components/frontend/ProjectPanel";
+import config from '../config';
+import Login from './board/Login';
+import Footer from './commons/Footer';
+import Header from './commons/Header';
+import Dashboard from './board/Dashboard';
+import * as routes from '../constants/routes';
+import Check from '../components/board/check';
+import Viewproject from './board/Viewproject';
+import StatusPage from './dashboard/StatusPage';
+import Addnewservice from './board/Addnewservice';
+import Addnewproject from './board/Addnewproject';
+import Projectpanel from '../components/frontend/ProjectPanel';
 
 const { logoUrl, logoHeight, baseHref } = config.app;
 

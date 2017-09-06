@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 class check extends Component {
   render() {
-              console.log('hello');
+    console.log('hello');
 
     return (
       <div>

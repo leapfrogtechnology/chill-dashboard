@@ -1,14 +1,13 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import { withRouter, Link } from "react-router-dom";
-import GoogleLogin from "react-google-login";
-import Check from "./check";
-import { fetchProjectServices } from "../../services/project";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { withRouter } from 'react-router-dom';
+import GoogleLogin from 'react-google-login';
+import { fetchProjectServices } from '../../services/project';
 
 class Login extends Component {
   responseGoogle = response => {
     fetchProjectServices(response.tokenId);
-    this.props.history.push("/projectpanel");
+    this.props.history.push('/projectpanel');
   };
 
   render() {

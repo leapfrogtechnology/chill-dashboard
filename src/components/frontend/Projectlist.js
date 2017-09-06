@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import keyolologo from "../../../public/images/keyolologo1.png";
-import checklogo from "../../../public/images/logocheck.png";
+import React, { Component } from 'react';
+import keyolologo from '../../../public/images/keyolologo1.png';
+import checklogo from '../../../public/images/logocheck.png';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 class Projectlist extends Component {
   render() {

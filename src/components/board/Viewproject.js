@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import ProjectList from "./Projectlist";
-import logoCheck from "../../../public/images/logocheck.png";
-import profilepictures from "../../../public/images/chill.png";
-import * as projectServices from "../../services/projectServices";
+import ProjectList from './Projectlist';
+import logoCheck from '../../../public/images/logocheck.png';
+import profilepictures from '../../../public/images/chill.png';
+import * as projectServices from '../../services/projectServices';
 
 class Viewproject extends Component {
   constructor() {
@@ -17,8 +17,8 @@ class Viewproject extends Component {
   }
 
   async fetchProjects() {
-    console.log("nbavs");
-    console.log("test2");
+    console.log('nbavs');
+    console.log('test2');
     try {
       const projects = await projectServices.fetch();
 

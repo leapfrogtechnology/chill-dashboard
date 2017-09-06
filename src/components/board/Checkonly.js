@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import keyolologo from "../../../public/images/keyolologo.PNG";
+import React, { Component } from 'react';
+import keyolologo from '../../../public/images/keyolologo.PNG';
 
 class Checkonly extends Component {
   render() {
@@ -26,7 +26,7 @@ class Checkonly extends Component {
                   <span id="sparklineA" />
                 </div>
                 <Link to="/viewproject" className="circle-tile-footer">
-                  View Service<i className="fa fa-chevron-circle-right" />{" "}
+                  View Service<i className="fa fa-chevron-circle-right" />{' '}
                 </Link>
 
                 {/* <a href="#" className="circle-tile-footer">View Services <i className="fa fa-chevron-circle-right"></i></a> */}
@@ -180,7 +180,7 @@ class Checkonly extends Component {
                   <span id="sparklineA" />
                 </div>
                 <Link to="/viewproject" className="circle-tile-footer">
-                  View Service<i className="fa fa-chevron-circle-right" />{" "}
+                  View Service<i className="fa fa-chevron-circle-right" />{' '}
                 </Link>
 
                 {/* <a href="#" className="circle-tile-footer">View Services <i className="fa fa-chevron-circle-right"></i></a> */}

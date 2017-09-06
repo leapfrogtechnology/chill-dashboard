@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import keyolologo from "../../../public/images/keyolologo.PNG";
-import * as projectServices from "../../services/projectServices";
-import Viewproject from "../../components/board/Viewproject";
-import ProjectList from "./Projectlist";
+import React, { Component } from 'react';
+import keyolologo from '../../../public/images/keyolologo.PNG';
+import * as projectServices from '../../services/projectServices';
+import Viewproject from '../../components/board/Viewproject';
+import ProjectList from './Projectlist';
 
 class ProjectViewModel extends Component {
   constructor() {

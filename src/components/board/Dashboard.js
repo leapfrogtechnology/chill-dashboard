@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Sidebar from "../frontend/Sidebar";
-import Container from "../frontend/Container";
+import React from 'react';
+import Sidebar from '../frontend/Sidebar';
+import Container from '../frontend/Container';
 
 const Dashboard = () => (
   <div>
@@ -14,4 +14,5 @@ const Dashboard = () => (
     </div>
   </div>
 );
+
 export default Dashboard;

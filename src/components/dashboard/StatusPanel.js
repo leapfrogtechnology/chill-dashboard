@@ -1,13 +1,13 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import { withStatusInfo } from "../hoc/status";
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { withStatusInfo } from '../hoc/status';
 
-import * as websocket from "../../services/websocket";
-import * as statusService from "../../services/status";
+import * as websocket from '../../services/websocket';
+import * as statusService from '../../services/status';
 
-import LogList from "./LogList";
-import Panel from "../commons/Panel";
-import ServiceList from "./ServiceList";
+import LogList from './LogList';
+import Panel from '../commons/Panel';
+import ServiceList from './ServiceList';
 
 class StatusPanel extends Component {
   constructor() {
@@ -38,6 +38,7 @@ class StatusPanel extends Component {
     try {
       let statuses = await statusService.fetchServiceStatuses();
       let logs = await statusService.fetchLogs();
+
       this.setState({
         logs: logs,
         statuses: statuses
