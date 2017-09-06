@@ -1,9 +1,7 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import keyolologo from '../../../public/images/keyolologo1.png';
-import checklogo from '../../../public/images/logocheck.png';
-import ProjectRow from './ProjectRow';
 
-import { Link } from 'react-router-dom';
+import ProjectRow from './ProjectRow';
 
 class Projectlist extends Component {
   constructor() {
@@ -29,4 +27,7 @@ class Projectlist extends Component {
     );
   }
 }
+Projectlist.propTypes = {
+  projectlist: PropTypes.array
+};
 export default Projectlist;

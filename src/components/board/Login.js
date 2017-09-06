@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import GoogleLogin from 'react-google-login';
+import { withRouter } from 'react-router-dom';
 import { fetchProjectServices } from '../../services/project';
 
 class Login extends Component {
@@ -23,5 +24,7 @@ class Login extends Component {
     );
   }
 }
-
+Login.propTypes = {
+  history: PropTypes.object.isRequired
+};
 export default withRouter(Login);

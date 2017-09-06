@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import logoCheck from '../../../public/images/logocheck.png';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
-import profilepictures from '../../../public/images/profilepictures.png';
-
 const sidebarLinks = [
   { label: 'Dashboard', to: '/' },
-  { label: 'AddProject', to: '/addproject' },
-  { label: 'AddProject', to: '/addproject' },
-  { label: 'AddProject', to: '/addproject' },
-  { label: 'AddProject', to: '/addproject' },
-  { label: 'AddProject', to: '/addproject' },
-  { label: 'AddProject', to: '/addproject' }
+  { label: 'Add Project', to: '/addproject' },
+  { label: 'Add Service', to: '/addproject' },
+  { label: 'Team', to: '/addproject' },
+  { label: 'Logout', to: '/addproject' }
 ];
 
 class Sidebar extends Component {
@@ -34,15 +29,6 @@ class Sidebar extends Component {
                 </li>
               ))}
             </div>
-            {/* <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-            <li>
-              <a href="#">Git</a>
-            </li> */}
           </ul>
         </nav>
       </div>

@@ -44,7 +44,6 @@ export const withStatusInfo = WrappedComponent => {
         status.services
       );
 
-      st;
       this.setStatus(Object.assign({}, status, { services }));
     };
 

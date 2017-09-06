@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 import ProjectList from './Projectlist';
-import logoCheck from '../../../public/images/logocheck.png';
-import profilepictures from '../../../public/images/chill.png';
 import * as projectServices from '../../services/projectServices';
 
 class Viewproject extends Component {
@@ -17,8 +15,6 @@ class Viewproject extends Component {
   }
 
   async fetchProjects() {
-    console.log('nbavs');
-    console.log('test2');
     try {
       const projects = await projectServices.fetch();
 
@@ -33,37 +29,7 @@ class Viewproject extends Component {
   render() {
     return (
       <div className="row yellow">
-        im from VIEWPROJECT
-        {/* {console.log(this.state.projects)}  */}
         <ProjectList projectlist={this.state.projects} />
-        {/* <h2> {this.state.projects[0] && this.state.projects[0].name}</h2> */}
-        {/* console.log({projects.map})
-         <div className="container">
-          <div className="showservice">
-            <ul>
-              <li>
-                Service 1
-                <button className="floatr"> Edit </button>
-                <button className="floatr"> Delete </button>
-              </li>
-              <li>
-                Service 2
-                <button className="floatr"> Edit </button>
-                <button className="floatr"> Delete </button>
-              </li>
-              <li>
-                Service 3
-                <button className="floatr"> Edit </button>
-                <button className="floatr"> Delete </button>
-              </li>
-              <li>
-                Service 4
-                <button className="floatr"> Edit </button>
-                <button className="floatr"> Delete </button>
-              </li>
-            </ul>
-          </div>
-        </div> */}
       </div>
     );
   }
