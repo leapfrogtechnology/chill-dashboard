@@ -654,6 +654,8 @@ form button.small:hover {
   background-color: rgb(26, 85, 56)2630;
   padding: 15px 0px;
   margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wrap {
@@ -705,7 +707,7 @@ h1 {
 label {
   display: block;
   overflow: hidden;
-  width: 120px;
+  width: 302px;
 }
 input[type="checkbox"] {
   vertical-align: middle;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Container from '../../components/frontend/Container';
-import Sidebar from '../../components/frontend/Sidebar';
+import Container from '../../components/projects/Container';
+import Sidebar from '../../components/projects/Sidebar';
 
 class ProjectPanel extends Component {
   render() {

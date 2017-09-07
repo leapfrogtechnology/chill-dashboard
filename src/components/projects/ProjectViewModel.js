@@ -29,7 +29,7 @@ class ProjectViewModel extends Component {
       <div>
         <div className="pagetitle">
           Project Overview
-          <Link exact to="/addproject" className="btn btn-primary floatr">
+          <Link to="/addproject" className="btn btn-primary floatr">
             Add Project
           </Link>
         </div>

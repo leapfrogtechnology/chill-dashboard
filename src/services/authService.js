@@ -7,7 +7,7 @@ import http from '../utils/http';
  * @returns {data}
  */
 
-export async function fetchProjectServices(tokenId) {
+export async function login(tokenId) {
   const { endpoints } = config.api;
 
   try {

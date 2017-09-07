@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import GoogleLogin from 'react-google-login';
 import { withRouter, Redirect } from 'react-router-dom';
 
-import { fetchProjectServices } from '../../services/project';
+import { login } from '../../services/authService';
 
 class Login extends Component {
   constructor() {
@@ -11,15 +11,18 @@ class Login extends Component {
     this.state = {
       isAuthenticated: false
     };
+    this.responseGoogle = this.responseGoogle.bind(this);
   }
-  responseGoogle = response => {
-    fetchProjectServices(response.tokenId);
-    if (response.tokenId) {
+
+  async responseGoogle(response) {
+    let data = await login(response.tokenId);
+
+    if (data) {
       this.setState({
         isAuthenticated: true
       });
     }
-  };
+  }
 
   render() {
     if (this.state.isAuthenticated) {
@@ -33,7 +36,7 @@ class Login extends Component {
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
-        />
+        />{' '}
       </div>
     );
   }

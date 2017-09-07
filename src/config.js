@@ -9,7 +9,9 @@ export default {
   api: {
     endpoints: {
       status: '/status',
-      auth: '/auth/callback'
+      auth: '/auth/callback',
+      projects: '/self/projects',
+      addproject: '/self/projects'
     },
     baseUrl:
       __INJECTED_CONFIG.dashboard.apiBaseUrl || 'http://localhost:8000/api'
