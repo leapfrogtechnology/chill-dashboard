@@ -4,12 +4,6 @@ import React, { Component } from 'react';
 import ProjectRow from './ProjectRow';
 
 class Projectlist extends Component {
-  constructor() {
-    super();
-    this.state = {
-      projectlist: []
-    };
-  }
   render() {
     return (
       <div>

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 const sidebarLinks = [
   { label: 'Dashboard', to: '/' },
-  { label: 'Add Project', to: '/addproject' },
-  { label: 'Add Service', to: '/addproject' },
   { label: 'Team', to: '/addproject' },
-  { label: 'Logout', to: '/addproject' }
+  { label: 'Logout', to: '/addproject' },
+  { label: 'Add Service', to: '/addproject' },
+  { label: 'Add Project', to: '/statuspage' }
 ];
 
 class Sidebar extends Component {

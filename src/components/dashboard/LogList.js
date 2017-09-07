@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 import LogRow from './LogRow';
 
 const LogList = ({ logs }) => (
-	<ul className="list-group">
-	{
-    logs && logs.map(log => <LogRow log={log} key={log.id} />)
-	}
-	</ul>
+  <ul className="list-group">
+    {logs && logs.map(log => <LogRow log={log} key={log.id} />)}
+  </ul>
 );
 
 LogList.propTypes = {

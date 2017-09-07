@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import logoCheck from '../../../public/images/chill.png';
 import profilepictures from '../../../public/images/profilepictures.png';
 
@@ -13,15 +14,17 @@ class Header extends Component {
             </a>
           </div>
           <div className="navbar-header shift ">
-            <span className="projectname"> CHILL
-</span>
+            <span className="projectname"> CHILL</span>
           </div>
           <div className="panel">
             <div className="profile">
               <div className="profile-img">
-
                 <a className="navbar-brand index" href="#">
-                  <img src={profilepictures} className="img-modifiy fright" alt="individual-pofile-image" />
+                  <img
+                    src={profilepictures}
+                    className="img-modifiy fright"
+                    alt="individual-pofile-image"
+                  />
                 </a>
               </div>
               <span className="profile-info">Aishwarya Shrestha</span>
@@ -29,7 +32,6 @@ class Header extends Component {
           </div>
         </div>
       </nav>
-
     );
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import * as projectServices from '../../services/projectServices';
 import ProjectList from './Projectlist';
 
@@ -26,7 +27,13 @@ class ProjectViewModel extends Component {
   render() {
     return (
       <div>
-        <div className="pagetitle">Project Overview</div>
+        <div className="pagetitle">
+          Project Overview
+          <Link exact to="/addproject" className="btn btn-primary floatr">
+            Add Project
+          </Link>
+        </div>
+
         <ProjectList projectlist={this.state.projects} />
       </div>
     );

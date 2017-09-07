@@ -2,7 +2,7 @@ import config from '../config';
 import http from '../utils/http';
 
 /**
- *
+ * Token from google server
  * @param {*} tokenId
  * @returns {data}
  */

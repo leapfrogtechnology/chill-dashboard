@@ -33,12 +33,9 @@ export async function fetchLogs() {
  * @param {Object} status
  * @returns {Boolean}
  */
+
 export function isUp(status) {
-  if (status.name === statusmessage.STATUS_UP) {
-    return 1;
-  } else {
-    return 0;
-  }
+  return status.name === statusmessage.STATUS_UP;
 }
 
 /**

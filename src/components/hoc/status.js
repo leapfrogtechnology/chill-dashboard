@@ -1,12 +1,13 @@
 import { update } from 'ramda';
 import React, { Component } from 'react';
 
-/** * @param {Object} WrappedComponent
+/**
+ * HOC that wraps the status page component with state
+ * containing latest status of services
  * @param {Object} WrappedComponent
  * @returns {Object}
  *
- * HOC that wraps the status page component with state
- * containing latest status of services.
+ .
  */
 export const withStatusInfo = WrappedComponent => {
   return class extends Component {
@@ -24,8 +25,8 @@ export const withStatusInfo = WrappedComponent => {
       this.setState({ status });
     };
     /**
+     *  Update the current status of services.
      * @param {Object} newStatus
-     * Update the current status of services.
      */
     updateStatus = newStatus => {
       let updatedStatus = Object.assign({}, this.state.status, newStatus);

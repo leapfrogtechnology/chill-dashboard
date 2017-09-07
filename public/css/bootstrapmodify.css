@@ -1,6 +1,7 @@
 .col-md-10 {
   padding-left: 0px;
 }
+
 .col10 {
   min-height: 0px;
   /* background-color: pink;  */
@@ -9,6 +10,7 @@ rgba(176, 255, 217, 0.64); */
   height: 600px;
   color: #000;
 }
+
 .pagetitle {
   height: 50px;
   width: 100%;
@@ -19,6 +21,7 @@ rgba(176, 255, 217, 0.64); */
   font-size: 30px;
   line-height: 50px;
 }
+
 /*colors define  */
 .color1 {
   background-color: grey;
@@ -29,19 +32,22 @@ rgba(176, 255, 217, 0.64); */
   background-color: lightblue;
   margin: 0px;
 }
+
 .color3 {
   background-color: lightskyblue;
   margin: 0px;
 }
+
 /*colors define ends */
 .topcontainer {
   height: 100px;
   background-color: lightblue;
 }
+
 .buttomcontainer {
-  height: 400px;
-  background-color: lightgrey;
+  height: auto;
 }
+
 /*sidebar css start  */
 .selected {
   background-color: #aec5e2;
@@ -62,4 +68,8 @@ div.box1:nth-child(even) {
 
 .circle-tile-odd {
   background-color: #1e2630;
+}
+.floatr {
+  float: right;
+  margin-top: 6px;
 }

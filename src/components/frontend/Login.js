@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import GoogleLogin from 'react-google-login';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
+
 import { fetchProjectServices } from '../../services/project';
 
 class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isAuthenticated: false
+    };
+  }
   responseGoogle = response => {
     fetchProjectServices(response.tokenId);
-    this.props.history.push('/projectpanel');
+    if (response.tokenId) {
+      this.setState({
+        isAuthenticated: true
+      });
+    }
   };
 
   render() {
+    if (this.state.isAuthenticated) {
+      return <Redirect to="/projectpanel" />;
+    }
+
     return (
       <div>
         <GoogleLogin
