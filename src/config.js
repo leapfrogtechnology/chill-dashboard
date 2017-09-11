@@ -11,7 +11,10 @@ export default {
       status: '/status',
       auth: '/auth/callback',
       projects: '/self/projects',
-      addproject: '/self/projects'
+      addproject: '/self/projects',
+      removeproject: '/self/projects',
+      updateproject: '/self/projects',
+      userinfo: '/self'
     },
     baseUrl:
       __INJECTED_CONFIG.dashboard.apiBaseUrl || 'http://localhost:8000/api'

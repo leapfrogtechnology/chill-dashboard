@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router-dom';
+import Userinfo from '../projects/UserInfo';
 import logoCheck from '../../../public/images/chill.png';
-import profilepictures from '../../../public/images/profilepictures.png';
 
 class Header extends Component {
   render() {
@@ -14,9 +15,11 @@ class Header extends Component {
             </a>
           </div>
           <div className="navbar-header shift ">
-            <span className="projectname"> CHILL</span>
+            <span className="projectname">
+              <Link to="/projectpanel"> CHILL</Link>
+            </span>
           </div>
-          <div className="panel">
+          {/* <div className="panel">
             <div className="profile">
               <div className="profile-img">
                 <a className="navbar-brand index" href="#">
@@ -29,7 +32,8 @@ class Header extends Component {
               </div>
               <span className="profile-info">Aishwarya Shrestha</span>
             </div>
-          </div>
+          </div>  */}
+          <Userinfo />
         </div>
       </nav>
     );

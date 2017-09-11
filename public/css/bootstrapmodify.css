@@ -1,3 +1,6 @@
+a {
+  color: white;
+}
 .col-md-10 {
   padding-left: 0px;
 }
@@ -72,4 +75,18 @@ div.box1:nth-child(even) {
 .floatr {
   float: right;
   margin-top: 6px;
+}
+.loginpanel {
+  background-color: grey;
+  height: 50;
+  width: 240;
+}
+.l {
+  float: left;
+}
+.colorblack {
+  color: black;
+}
+.inputfile {
+  color: black;
 }

@@ -10,7 +10,9 @@ class Projectlist extends Component {
         {this.props.projectlist.map((allproject, i) => {
           return (
             <ProjectRow
+              data={allproject}
               key={allproject.id}
+              id={allproject.id}
               name={allproject.name}
               index={i}
               className="box1"

@@ -719,7 +719,9 @@ input[type="checkbox"] {
   font-family: "Courier New", Courier, monospace;
   font-weight: 20;
   font-size: 30px;
+  color: white;
 }
+
 .checkbox label,
 .radio label {
   padding-left: 0px;

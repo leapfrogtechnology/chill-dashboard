@@ -13,7 +13,7 @@ class Index extends Component {
     };
     this.responseGoogle = this.responseGoogle.bind(this);
   }
-  // fetchProjectServices
+
   async responseGoogle(response) {
     let data = await login(response.tokenId);
 
@@ -32,8 +32,9 @@ class Index extends Component {
     return (
       <div>
         <GoogleLogin
+          className="btn-google"
           clientId="739933093379-7q3mdd5pec4pj9n8vhpgfpdv7ijqcgtc.apps.googleusercontent.com"
-          buttonText="Login"
+          buttonText="Login with google"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
         />
