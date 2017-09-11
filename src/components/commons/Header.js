@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { Link } from 'react-router-dom';
-import Userinfo from '../projects/UserInfo';
-import logoCheck from '../../../public/images/chill.png';
+import { Link } from "react-router-dom";
+import Userinfo from "../projects/UserInfo";
+import logoCheck from "../../../public/images/chill.png";
 
 class Header extends Component {
   render() {
@@ -19,20 +19,7 @@ class Header extends Component {
               <Link to="/projectpanel"> CHILL</Link>
             </span>
           </div>
-          {/* <div className="panel">
-            <div className="profile">
-              <div className="profile-img">
-                <a className="navbar-brand index" href="#">
-                  <img
-                    src={profilepictures}
-                    className="img-modifiy fright"
-                    alt="individual-pofile-image"
-                  />
-                </a>
-              </div>
-              <span className="profile-info">Aishwarya Shrestha</span>
-            </div>
-          </div>  */}
+
           <Userinfo />
         </div>
       </nav>
