@@ -6,7 +6,5 @@ node_js:
   - "6"
 services:
   - postgresql
-script:
-  - npm run test:coverage
 after_script:
   - npm run codecov
