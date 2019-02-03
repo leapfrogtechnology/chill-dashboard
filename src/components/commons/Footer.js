@@ -8,9 +8,10 @@ const Footer = () => {
           Powered By
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/leapfrogtechnology/chill"
           >
-            {` Chill`}
+            {' Chill'}
           </a>
         </span>
       </div>

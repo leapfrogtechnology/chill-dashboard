@@ -8,6 +8,7 @@ a:hover {
 }
 
 .navbar-logo-container {
+  margin: 0 auto;
   text-align: center;
   line-height: 100px;
 }

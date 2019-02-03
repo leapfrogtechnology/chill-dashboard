@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const { init } = require('chill-core');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**
  * Configure Webpack.
@@ -15,16 +15,17 @@ async function configureWebpack() {
   const config = await init();
 
   return {
+    mode: 'development',
     entry: [
       'react-hot-loader/patch',
       'webpack-dev-server/client?http://localhost:8181', // WebpackDevServer host and port
       'webpack/hot/only-dev-server', // 'only' prevents reload on syntax errors
-      './index.js'// the entry point of our app
+      './index.js' // the entry point of our app
     ],
     output: {
       publicPath: '/',
       filename: 'js/bundle.js', // the output bundle
-      chunkFilename: '[id].js',
+      chunkFilename: 'js/chunk.[id].js',
       path: path.resolve(__dirname, 'dist')
     },
     context: path.resolve(__dirname, 'src'),
@@ -44,8 +45,13 @@ async function configureWebpack() {
           use: ['babel-loader']
         },
         {
-          test: /\.css$/,
-          use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+            'postcss-loader',
+            'sass-loader'
+          ]
         },
         {
           test: /\.(jpe?g|png|gif|svg)$/i,
@@ -58,15 +64,14 @@ async function configureWebpack() {
         {
           test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
           use: 'file-loader'
-        },
-        {
-          test: /\.scss$/,
-          use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: ['css-loader', 'sass-loader'] })
         }
       ]
     },
     plugins: [
-      new ExtractTextPlugin('css/bundle.css'),
+      new MiniCssExtractPlugin({
+        filename: 'css/bundle.css',
+        chunkFilename: 'css/chunk.[name].css'
+      }),
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'public/index.html')
       }),
@@ -74,10 +79,24 @@ async function configureWebpack() {
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
         '__INJECTED_CONFIG.dashboard': JSON.stringify(config.dashboard)
       }),
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
       new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
       new webpack.NoEmitOnErrorsPlugin(), // do not emit compiled assets that include errors
       new webpack.HotModuleReplacementPlugin() // enable HMR globally
-    ]
+    ],
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            chunks: 'initial',
+            name: 'vendor',
+            test: /node_modules/,
+            enforce: true
+          },
+        }
+      },
+      runtimeChunk: true
+    },
   };
 }
 

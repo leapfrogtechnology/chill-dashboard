@@ -2,41 +2,33 @@ env:
   es6: true
   node: true
   browser: true
+  commonjs: true
 
-parserOptions:
-  ecmaVersion: 2017
-  sourceType: module
+extends: ['eslint:recommended', 'plugin:react/recommended']
 
 globals:
   __INJECTED_CONFIG: true
 
-extends: ['eslint:recommended', 'plugin:react/recommended']
-parser: babel-eslint
-rules:
-  no-var: 2
-  key-spacing: 2
-  semi-spacing: 2
-  block-spacing: 2
-  spaced-comment: 2
-  callback-return: 2
-  space-infix-ops: 2
-  keyword-spacing: 2
-  newline-after-var: 2
-  space-before-blocks: 2
-  handle-callback-err: 2
-  newline-before-return: 2
-  semi: [2, 'always']
-  eqeqeq: [2, 'always']
-  eol-last: [2, 'always']
-  max-statements: [2, 30]
-  comma-dangle: [2, never]
-  indent: [2, 2, {'SwitchCase': 1}]
-  object-curly-spacing: [2, 'always']
-  comma-spacing: [2, {'before': false, 'after': true}]
-  quotes: [2, 'single', {'allowTemplateLiterals': true}]
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2018
+  sourceType: module
 
-  # React specific rules
-  'react/prop-types': 1
-  'react/no-children-prop': 0
-  'react/no-string-refs': 1
-  'react/display-name': 0
+parser: babel-eslint
+
+rules:
+  indent: [2, 2, {'SwitchCase': 1}]
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+
+settings:
+  react:
+    version: latest
